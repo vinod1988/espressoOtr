@@ -43,7 +43,6 @@ public class CollectionCoverter
 	return convertedArray;
     }
 
-    
     public static List<String> stirngArray2List(String[] array)
     {
 	List<String> convertedList = new ArrayList<String>();
@@ -56,6 +55,28 @@ public class CollectionCoverter
 
     }
 
-    
-    
+    public static int[] intList2Array(List<Integer> list)
+    {
+	int count = list.size();
+	int[] convertedArray = new int[count];
+	for (int i = 0; i < count; i++)
+	{
+	    convertedArray[i] = list.get(i);
+	}
+
+	return convertedArray;
+    }
+
+    public static List<Integer> intArray2List(int[] array)
+    {
+	List<Integer> convertedList = new ArrayList<Integer>();
+	for (Integer obj : array)
+	{
+	    convertedList.add(obj);
+	}
+
+	return convertedList;
+
+    }
+
 }

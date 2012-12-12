@@ -9,36 +9,61 @@ import org.espressootr.lib.utils.InitializerUtil;
 public class FastSplitter
 {
 
-    private String target = InitializerUtil.EMPTY_STRING;
+    private char separator = InitializerUtil.EMPTY_CHAR;
+    private boolean isTrim = false;
 
-    public String getTarget()
+    @SuppressWarnings("unused")
+    private FastSplitter()
     {
-	return target;
+	throw new AssertionError();
+
     }
 
-    public void setTarget(String target)
+    public FastSplitter(char separator)
     {
-	this.target = target;
+	this.separator = separator;
     }
 
-    public String[] splitToArray(char separator)
+    public char getSeparator()
     {
-	return CollectionCoverter.stringList2Array(splitToList(separator));
+	return separator;
     }
 
-    public List<String> splitToList(char separator)
+    public void setSeparator(char separator)
+    {
+	this.separator = separator;
+    }
+
+    public void setTrim(boolean isTrim)
+    {
+	this.isTrim = isTrim;
+
+    }
+
+    public String[] splitToArray(String target)
+    {
+	return CollectionCoverter.stringList2Array(splitToList(target));
+    }
+
+    public List<String> splitToList(String target)
     {
 	List<String> splittedResult = new ArrayList<String>();
 
-	char[] targetChars = this.target.toCharArray();
+	char[] targetChars = target.toCharArray();
 
 	StringBuilder mergedChars = new StringBuilder();
 
+	String willInsertString = "";
 	for (char targetChar : targetChars)
 	{
-	    if (targetChar == separator)
+	    if (targetChar == this.separator)
 	    {
-		splittedResult.add(mergedChars.toString());
+		if (isTrim)
+		    willInsertString = mergedChars.toString().trim();
+		else
+		    willInsertString = mergedChars.toString();
+
+		splittedResult.add(willInsertString);
 		mergedChars.delete(0, mergedChars.length());
 	    }
 	    else
@@ -48,23 +73,15 @@ public class FastSplitter
 
 	}
 
+	if (isTrim)
+	    willInsertString = mergedChars.toString().trim();
+	else
+	    willInsertString = mergedChars.toString();
+
+	splittedResult.add(willInsertString);
+
 	return splittedResult;
 
-    }
-
-    public String[] splitToArray(String separator)
-    {
-
-	// TODO:
-
-	return null;
-    }
-
-    public List<String> splitToList(String separator)
-    {
-	// TODO :
-
-	return null;
     }
 
 }
