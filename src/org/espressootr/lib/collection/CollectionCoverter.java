@@ -43,7 +43,7 @@ public class CollectionCoverter
 	return convertedArray;
     }
 
-    public static List<String> stirngArray2List(String[] array)
+    public static List<String> stringArray2List(String[] array)
     {
 	List<String> convertedList = new ArrayList<String>();
 	for (String obj : array)
