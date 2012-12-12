@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.espressootr.lig.encoding.Encoding;
+import org.espressootr.lib.encoding.Encoding;
  
  
 public class FileReaderManager

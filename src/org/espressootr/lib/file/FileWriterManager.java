@@ -5,7 +5,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 
-import org.espressootr.lig.encoding.Encoding;
+import org.espressootr.lib.encoding.Encoding;
  
  
 public class FileWriterManager

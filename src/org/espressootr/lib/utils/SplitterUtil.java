@@ -1,6 +1,6 @@
 package org.espressootr.lib.utils;
 
-public class Splitter
+public class SplitterUtil
 {
 
     public static final String COLON = ":";

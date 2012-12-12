@@ -6,7 +6,7 @@ import java.util.List;
 public class CollectionCoverter
 {
 
-    public List<Object> array2List(Object[] array)
+    public static List<Object> array2List(Object[] array)
     {
 	List<Object> convertedList = new ArrayList<Object>();
 	for (Object obj : array)
@@ -18,7 +18,7 @@ public class CollectionCoverter
 
     }
 
-    public Object[] list2Array(List<Object> list)
+    public static Object[] list2Array(List<Object> list)
     {
 	int count = list.size();
 	Object[] convertedArray = new Object[count];
@@ -31,4 +31,31 @@ public class CollectionCoverter
 
     }
 
+    public static String[] stringList2Array(List<String> list)
+    {
+	int count = list.size();
+	String[] convertedArray = new String[count];
+	for (int i = 0; i < count; i++)
+	{
+	    convertedArray[i] = list.get(i);
+	}
+
+	return convertedArray;
+    }
+
+    
+    public static List<String> stirngArray2List(String[] array)
+    {
+	List<String> convertedList = new ArrayList<String>();
+	for (String obj : array)
+	{
+	    convertedList.add(obj);
+	}
+
+	return convertedList;
+
+    }
+
+    
+    
 }

@@ -1,4 +1,4 @@
-package org.espressootr.lig.encoding;
+package org.espressootr.lib.encoding;
 
 /**
  * getUnicode Value return class.
