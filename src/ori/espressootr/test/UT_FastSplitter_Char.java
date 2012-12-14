@@ -3,7 +3,7 @@ package ori.espressootr.test;
 
 import java.util.List;
 
-import org.espressootr.lib.text.FastSplitter;
+import org.espressootr.lib.text.splitter.FastSplitter;
 import org.junit.Before;
 import org.junit.Test;
 

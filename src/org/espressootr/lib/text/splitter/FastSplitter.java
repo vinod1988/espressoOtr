@@ -1,15 +1,15 @@
-package org.espressootr.lib.text;
+package org.espressootr.lib.text.splitter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.espressootr.lib.collection.CollectionCoverter;
-import org.espressootr.lib.utils.InitializerUtil;
+import org.espressootr.lib.utils.InitUtil;
 
 public class FastSplitter
 {
 
-    private char separator = InitializerUtil.EMPTY_CHAR;
+    private char separator = InitUtil.EMPTY_CHAR;
     private boolean isTrim = false;
 
     @SuppressWarnings("unused")
@@ -53,7 +53,7 @@ public class FastSplitter
 
 	StringBuilder mergedChars = new StringBuilder();
 
-	String willInsertString = InitializerUtil.EMPTY_STRING;
+	String willInsertString = InitUtil.EMPTY_STRING;
 	for (char targetChar : targetChars)
 	{
 	    if (targetChar == this.separator)

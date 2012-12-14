@@ -31,7 +31,7 @@ public class IndexUtil
 	String[] index = new String[size];
 
 	for (int i = 0; i < size; i++)
-	    index[i] = InitializerUtil.EMPTY_STRING;
+	    index[i] = InitUtil.EMPTY_STRING;
 
 	return index;
 
