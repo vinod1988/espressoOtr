@@ -31,12 +31,8 @@ public class UT_CollectionConverter_Integer
 
 	org.junit.Assert.assertEquals(5, cnvList.size());
 	
-
 	for(int i =0; i<cnvList.size(); i++)
 	    org.junit.Assert.assertEquals(Integer.valueOf(i), cnvList.get(i));    
-	
-	
-
     }
 
     @Test

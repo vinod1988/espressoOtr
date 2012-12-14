@@ -53,7 +53,7 @@ public class FastSplitter
 
 	StringBuilder mergedChars = new StringBuilder();
 
-	String willInsertString = "";
+	String willInsertString = InitializerUtil.EMPTY_STRING;
 	for (char targetChar : targetChars)
 	{
 	    if (targetChar == this.separator)
