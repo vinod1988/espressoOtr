@@ -1,37 +1,22 @@
 package org.espressootr.lib.text.extractor;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+ 
 import java.util.List;
 
+import org.espressootr.lib.collection.CollectionConverter;
 import org.espressootr.lib.text.TextDiscriminator;
 import org.espressootr.lib.utils.SplitterUtil;
 
 public class TermExtractor
-{
+{ 
 
-    public int extractTermCount(String target)
-    {
-	return extractTerms(target).length;
-    }
-
-    public String[] extractTerms(String target)
+    public String[] extractTermsToArray(String target)
     {
 	target = TextDiscriminator.replaceSymbolToSpace(target);
 	target = TextDiscriminator.replaceWhiteSpaceToSpace(target);
 
-	List<String> draftTermList = new ArrayList<String>(Arrays.asList(target.split(" ")));
-	List<String> terms = new ArrayList<String>();
-
-	for (String draftTerm : draftTermList)
-	{
-	    if (draftTerm.length() != 0)
-		terms.add(draftTerm.trim());
-	}
-
-	String[] refinedTerms = terms.toArray(new String[terms.size()]);
-
-	return refinedTerms;
+	String[] terms = target.split(SplitterUtil.SPACE);
+	return terms; 
     }
 
     public List<String> extractTermsToList(String target)
@@ -42,16 +27,12 @@ public class TermExtractor
 
 	String[] terms = target.split(SplitterUtil.SPACE);
 
-	List<String> termList = new ArrayList<String>();
-
-	for (int i = 0; i < terms.length; i++)
-	{
-	    if (terms[i].length() != 0)
-		termList.add(terms[i].trim());
-	}
-
-	return termList;
+	return CollectionConverter.stringArray2List(terms);
+	
     }
 
-
+    public int extractTermCount(String target)
+    {
+        return extractTermsToArray(target).length;
+    }
 }

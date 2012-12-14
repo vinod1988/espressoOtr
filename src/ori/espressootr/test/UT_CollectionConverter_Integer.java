@@ -4,7 +4,7 @@ package ori.espressootr.test;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.espressootr.lib.collection.CollectionCoverter;
+import org.espressootr.lib.collection.CollectionConverter;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -27,7 +27,7 @@ public class UT_CollectionConverter_Integer
     public void test_ArrayToIntegerList()
     {
 
-	List<Integer> cnvList = CollectionCoverter.intArray2List(array);
+	List<Integer> cnvList = CollectionConverter.intArray2List(array);
 
 	org.junit.Assert.assertEquals(5, cnvList.size());
 	
@@ -38,7 +38,7 @@ public class UT_CollectionConverter_Integer
     @Test
     public void test_IntegerListToArray()
     {
-	int[] cnvArray = CollectionCoverter.intList2Array(list);
+	int[] cnvArray = CollectionConverter.intList2Array(list);
 
 	org.junit.Assert.assertEquals(5, cnvArray.length);
 	

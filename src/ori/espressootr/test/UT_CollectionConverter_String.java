@@ -4,7 +4,7 @@ package ori.espressootr.test;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.espressootr.lib.collection.CollectionCoverter;
+import org.espressootr.lib.collection.CollectionConverter;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -31,7 +31,7 @@ public class UT_CollectionConverter_String
     public void test_ArrayToStringList()
     { 
 
-	List<String> cnvList = CollectionCoverter.stringArray2List(array);
+	List<String> cnvList = CollectionConverter.stringArray2List(array);
 
 	org.junit.Assert.assertEquals(5, cnvList.size());
 	
@@ -46,7 +46,7 @@ public class UT_CollectionConverter_String
     public void test_StringListToArray()
     {
 
-	String[] cnvArray = CollectionCoverter.stringList2Array(list);
+	String[] cnvArray = CollectionConverter.stringList2Array(list);
 
 	org.junit.Assert.assertEquals(5, cnvArray.length);
 	

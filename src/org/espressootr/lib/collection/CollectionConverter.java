@@ -3,7 +3,7 @@ package org.espressootr.lib.collection;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CollectionCoverter
+public class CollectionConverter
 {
 
     public static List<Object> array2List(Object[] array)

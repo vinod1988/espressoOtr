@@ -3,7 +3,7 @@ package org.espressootr.lib.text.splitter;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.espressootr.lib.collection.CollectionCoverter;
+import org.espressootr.lib.collection.CollectionConverter;
 import org.espressootr.lib.utils.InitUtil;
 
 public class FastSplitter
@@ -42,7 +42,7 @@ public class FastSplitter
 
     public String[] splitToArray(String target)
     {
-	return CollectionCoverter.stringList2Array(splitToList(target));
+	return CollectionConverter.stringList2Array(splitToList(target));
     }
 
     public List<String> splitToList(String target)
