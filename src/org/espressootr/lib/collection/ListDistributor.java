@@ -8,20 +8,21 @@ import org.espressootr.lib.utils.InitUtil;
 
 public class ListDistributor
 {
-    public static HashMap<Integer, List<String>> distributeListToSubList(int subListCount, List<String> targetList)
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static HashMap<Integer, List> distributeListToSubList(int subListCount, List targetList)
     {
-        HashMap<Integer, List<String>> distributedList = new HashMap<Integer, List<String>>();
+        HashMap<Integer, List> distributedList = new HashMap<Integer, List>();
         
         if (subListCount == InitUtil.ZERO)
         {
-            distributedList.put(0, new ArrayList<String>(targetList));
+            distributedList.put(0, new ArrayList(targetList));
         }
         else
         {
             
             for (int i = 0; i < subListCount; i++)
             {
-                distributedList.put(i, new ArrayList<String>());
+                distributedList.put(i, new ArrayList<Object>());
             }
             
             int eachCapacity = targetList.size() / subListCount;
@@ -45,13 +46,14 @@ public class ListDistributor
         return distributedList;
     }
     
-    public static HashMap<Integer, List<String>> distributeListToSameCapacity(int capacityCount, List<String> targetList)
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static HashMap<Integer, List> distributeListToSameCapacity(int capacityCount, List targetList)
     {
-        HashMap<Integer, List<String>> distributedList = new HashMap<Integer, List<String>>();
+        HashMap<Integer, List> distributedList = new HashMap<Integer, List>();
         
         if (capacityCount <= InitUtil.ZERO)
         {
-            distributedList.put(0, new ArrayList<String>(targetList));
+            distributedList.put(0, new ArrayList(targetList));
         }
         else
         {
@@ -69,7 +71,7 @@ public class ListDistributor
                 
                 if (toIndex > targetList.size()) toIndex = targetList.size();
                 
-                distributedList.put(index, new ArrayList<String>(targetList.subList(i, toIndex)));
+                distributedList.put(index, new ArrayList(targetList.subList(i, toIndex)));
                 
                 index++;
                 i += capacityCount;

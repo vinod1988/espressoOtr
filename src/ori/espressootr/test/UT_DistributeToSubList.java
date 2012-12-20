@@ -13,8 +13,10 @@ import org.junit.Test;
 public class UT_DistributeToSubList
 {
     
-    List<String> target = new ArrayList<String>();
+    @SuppressWarnings("rawtypes")
+    List target = new ArrayList();
     
+    @SuppressWarnings("unchecked")
     @Before
     public void setUp() throws Exception
     {
@@ -24,62 +26,58 @@ public class UT_DistributeToSubList
         }
     }
     
-    
+    @SuppressWarnings("rawtypes")
     @Test
     public void test_REGULAR()
     {
-        HashMap<Integer, List<String>> dist = ListDistributor.distributeListToSubList(4, target);
+        HashMap<Integer, List> dist = ListDistributor.distributeListToSubList(4, target);
         
         assertEquals(4, dist.size());
         
-        for(int i =0; i<dist.size(); i++)
+        for (int i = 0; i < dist.size(); i++)
         {
-            List<String> subList = dist.get(i); 
+            List subList = dist.get(i);
             
-            for(String sub : subList)
-                System.out.println(sub); 
+            for (int j = 0; j < subList.size(); j++)
+                System.out.println(String.valueOf(subList.get(j)));
         }
         
     }
     
-    
+    @SuppressWarnings("rawtypes")
     @Test
     public void test_ZERO()
     {
-        HashMap<Integer, List<String>> dist = ListDistributor.distributeListToSubList(0, target);
+        HashMap<Integer, List> dist = ListDistributor.distributeListToSubList(0, target);
         
         assertEquals(1, dist.size());
         
-        for(int i =0; i<dist.size(); i++)
+        for (int i = 0; i < dist.size(); i++)
         {
-            List<String> subList = dist.get(i); 
+            List subList = dist.get(i);
             
-            for(String sub : subList)
-                System.out.println(sub); 
+            for (int j = 0; j < subList.size(); j++)
+                System.out.println(String.valueOf(subList.get(j)));
         }
-        
         
     }
     
+    @SuppressWarnings("rawtypes")
     @Test
     public void test_ONE()
     {
-        HashMap<Integer, List<String>> dist = ListDistributor.distributeListToSubList(1, target);
+        HashMap<Integer, List> dist = ListDistributor.distributeListToSubList(1, target);
         
         assertEquals(1, dist.size());
         
-        for(int i =0; i<dist.size(); i++)
+        for (int i = 0; i < dist.size(); i++)
         {
-            List<String> subList = dist.get(i); 
+            List subList = dist.get(i);
             
-            for(String sub : subList)
-                System.out.println(sub); 
+            for (int j = 0; j < subList.size(); j++)
+                System.out.println(String.valueOf(subList.get(j)));
         }
         
-        
     }
-    
-    
-    
     
 }

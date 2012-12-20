@@ -12,8 +12,11 @@ import org.junit.Test;
 
 public class UT_DistributeListToSameCapacity
 {
-    List<String> target = new ArrayList<String>();
+    @SuppressWarnings("rawtypes")
+    List target = new ArrayList();
     
+ 
+    @SuppressWarnings("unchecked")
     @Before
     public void setUp() throws Exception
     {
@@ -23,12 +26,14 @@ public class UT_DistributeListToSameCapacity
         }
     }
     
+ 
     @Test
     public void test_REGULAR_DISTRIBUTE()
     {
         
         int distributionFactor = 3;
-        HashMap<Integer, List<String>> dist = ListDistributor.distributeListToSameCapacity(distributionFactor, target);
+        @SuppressWarnings("rawtypes")
+        HashMap<Integer, List> dist = ListDistributor.distributeListToSameCapacity(distributionFactor, target);
         
         assertEquals(4, dist.size());
         
@@ -39,12 +44,14 @@ public class UT_DistributeListToSameCapacity
         
     }
     
+
+    @SuppressWarnings("rawtypes")
     @Test
     public void test_ZERO_DISTRIBUTE()
     {
         
         int distributionFactor = 0;
-        HashMap<Integer, List<String>> dist = ListDistributor.distributeListToSameCapacity(distributionFactor, target);
+        HashMap<Integer, List> dist = ListDistributor.distributeListToSameCapacity(distributionFactor, target);
         
         assertEquals(1, dist.size());
         
@@ -59,7 +66,9 @@ public class UT_DistributeListToSameCapacity
     public void test_ONE_DISTRIBUTE()
     {
         int distributionFactor = 1;
-        HashMap<Integer, List<String>> dist = ListDistributor.distributeListToSameCapacity(distributionFactor, target);
+
+        @SuppressWarnings("rawtypes")
+        HashMap<Integer, List> dist = ListDistributor.distributeListToSameCapacity(distributionFactor, target);
         
         assertEquals(10, dist.size());
         
@@ -73,7 +82,9 @@ public class UT_DistributeListToSameCapacity
     public void test_EXCEED_DISTRIBUTE()
     {
         int distributionFactor = 20;
-        HashMap<Integer, List<String>> dist = ListDistributor.distributeListToSameCapacity(distributionFactor, target);
+
+        @SuppressWarnings("rawtypes")
+        HashMap<Integer, List> dist = ListDistributor.distributeListToSameCapacity(distributionFactor, target);
         
         assertEquals(1, dist.size());
         
@@ -84,11 +95,13 @@ public class UT_DistributeListToSameCapacity
         
     }
     
+
+    @SuppressWarnings("rawtypes")
     @Test
     public void test_MINUS_FACTOR_DISTRIBUTE()
     {
         int distributionFactor = -1;
-        HashMap<Integer, List<String>> dist = ListDistributor.distributeListToSameCapacity(distributionFactor, target);
+        HashMap<Integer, List> dist = ListDistributor.distributeListToSameCapacity(distributionFactor, target);
         
         assertEquals(1, dist.size());
         
@@ -98,11 +111,13 @@ public class UT_DistributeListToSameCapacity
         }
     }
     
+
+    @SuppressWarnings("rawtypes")
     @Test
     public void test_IS_REMOVE_ORIGINAL()
     {
         int distributionFactor = 3;
-        HashMap<Integer, List<String>> dist = ListDistributor.distributeListToSameCapacity(distributionFactor, target);
+        HashMap<Integer, List> dist = ListDistributor.distributeListToSameCapacity(distributionFactor, target);
         
         for (int i = 0; i < dist.size(); i++)
         {
