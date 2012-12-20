@@ -12,12 +12,35 @@ public class ListDistributor
     {
         HashMap<Integer, List<String>> distributedList = new HashMap<Integer, List<String>>();
         
-        for (int i = 0; i < subListCount; i++)
+        if (subListCount == InitUtil.ZERO)
         {
-            distributedList.put(i, new ArrayList<String>());
+            distributedList.put(0, new ArrayList<String>(targetList));
         }
-        
-        // TODO:
+        else
+        {
+            
+            for (int i = 0; i < subListCount; i++)
+            {
+                distributedList.put(i, new ArrayList<String>());
+            }
+            
+            int eachCapacity = targetList.size() / subListCount;
+            
+            int index = 0;
+            for (int i = 0; i < targetList.size(); i++)
+            { 
+                distributedList.get(index).add(targetList.get(i));
+                
+                if (index != distributedList.size()-1)
+                {
+                    if (distributedList.get(index).size() == eachCapacity)
+                    {
+                        index++;
+                    }
+                }
+                
+            }
+        }
         
         return distributedList;
     }
@@ -32,8 +55,8 @@ public class ListDistributor
         }
         else
         {
-            int toIndex = 0;
-            int index = 0;
+            int toIndex = InitUtil.ZERO;
+            int index = InitUtil.ZERO;
             
             for (int i = 0; i < targetList.size();)
             {
