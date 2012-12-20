@@ -8,42 +8,50 @@ import org.espressootr.lib.utils.InitUtil;
 
 public class ListDistributor
 {
-    
-    public static HashMap<Integer, List<String>> distributeListToSameCapacity(int capacityCount, List<String> targetList)
-    { 
+    public static HashMap<Integer, List<String>> distributeListToSubList(int subListCount, List<String> targetList)
+    {
         HashMap<Integer, List<String>> distributedList = new HashMap<Integer, List<String>>();
         
-        if (capacityCount == InitUtil.ZERO)
+        for (int i = 0; i < subListCount; i++)
+        {
+            distributedList.put(i, new ArrayList<String>());
+        }
+        
+        // TODO:
+        
+        return distributedList;
+    }
+    
+    public static HashMap<Integer, List<String>> distributeListToSameCapacity(int capacityCount, List<String> targetList)
+    {
+        HashMap<Integer, List<String>> distributedList = new HashMap<Integer, List<String>>();
+        
+        if (capacityCount <= InitUtil.ZERO)
         {
             distributedList.put(0, new ArrayList<String>(targetList));
         }
         else
         {
-            int fromIndex = 0;
-            int toIndex = capacityCount;
-            
+            int toIndex = 0;
             int index = 0;
-            for (;;)
+            
+            for (int i = 0; i < targetList.size();)
             {
-                if (targetList.size() < toIndex)
-                {
-                    toIndex = targetList.size();
-                }
+                toIndex = i + capacityCount;
                 
-                distributedList.put(index, new ArrayList<String>(targetList.subList(fromIndex, toIndex)));
-                index++;
-                
-                for (int i = fromIndex; i < toIndex; i++)
-                {
-                    targetList.remove(0);
-                }
-                
-                if (targetList.size() == InitUtil.ZERO)
+                if (i > targetList.size())
                 {
                     break;
                 }
                 
-            }// for(;;)
+                if (toIndex > targetList.size()) toIndex = targetList.size();
+                
+                distributedList.put(index, new ArrayList<String>(targetList.subList(i, toIndex)));
+                
+                index++;
+                i += capacityCount;
+                
+            }// for
         }
         
         return distributedList;
