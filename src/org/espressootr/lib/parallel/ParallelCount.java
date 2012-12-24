@@ -14,9 +14,7 @@ public class ParallelCount
         
         if (parallelCount > cpuCore)
         {
-            
             parallelCount = cpuCore;
-            
         }
         
         return parallelCount;

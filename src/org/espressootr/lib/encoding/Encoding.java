@@ -20,7 +20,5 @@ public class Encoding
 	String encoding = new java.io.OutputStreamWriter(System.out).getEncoding();
 	return encoding;
     }
-    
-    
 
 }
