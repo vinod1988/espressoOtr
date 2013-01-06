@@ -35,6 +35,5 @@ public class FileReaderManager
         in.close();
         
         return lineList;
-        
     }
 }
