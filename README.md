@@ -9,5 +9,8 @@ It's Plain Java Libray for processing based on text.
 <br/>
 Spring 같은 프레임워크 없이 텍스트 처리를 위한 순수 자바 라아브러리. 
 
-![ScreenShot](http://c.photoshelter.com/img-get/I0000ZHyRDf0HBX4/s)
+<center>
+
+![ScreenShot](http://c.photoshelter.com/img-get/I0000ZHyRDf0HBX4/s)</cener>
+
 
