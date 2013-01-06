@@ -1,6 +1,7 @@
 
 # espressootr(Espresso on the rock)
 
-![ScreenShot](http://c.photoshelter.com/img-get/I0000ZHyRDf0HBX4/s)
+goal : Do programming, drinking coffee. Releaxing. 
+<br/>
 
-
+It's Plain Java Libray for processing based on text.  
