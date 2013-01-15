@@ -26,7 +26,6 @@ public class CustomFileFilter implements FilenameFilter
     @Override
     public boolean accept(File arg0, String fileName)
     {
-
 	return isAccept(fileName);
     }
 
