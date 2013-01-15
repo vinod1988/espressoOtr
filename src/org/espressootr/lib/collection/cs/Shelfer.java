@@ -7,6 +7,9 @@ import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
+import org.espressootr.lib.utils.CapacityUtils;
+import org.espressootr.lib.utils.InitUtil;
+
 public class Shelfer
 {
     private HashMap<String, Canister> shelf = null;
@@ -18,20 +21,22 @@ public class Shelfer
     
     public Shelfer(List<String> elements)
     {
+        int i = InitUtil.ZERO;
+        int elementSize = elements.size();
+        
+        char prevFrontChar = InitUtil.EMPTY_CHAR;
+        char currentFrontChar = InitUtil.EMPTY_CHAR;
+        
+        String tag = InitUtil.EMPTY_STRING;
+        
         if (shelf == null)
         {
-            shelf = new HashMap<String, Canister>();
+            shelf = new HashMap<String, Canister>(CapacityUtils.adjustInitialCapacity(elements.size()));
         }
         
-        char prevFrontChar = ' ';
-        char currentFrontChar = ' ';
-        
         List<String> tmpList = new ArrayList<String>();
-        String tag = "";
-        int i = 0;
-        int size = elements.size();
         
-        for (; i < size; i++)
+        for (; i < elementSize; i++)
         {
             currentFrontChar = elements.get(i).charAt(0);
             
