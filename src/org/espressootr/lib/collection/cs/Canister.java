@@ -1,50 +1,76 @@
 package org.espressootr.lib.collection.cs;
 
+ 
+
 import java.util.ArrayList;
 import java.util.List;
 
+import org.espressootr.lib.search.BiSearch;
+import org.espressootr.lib.sort.QuickSort;
+ 
 public class Canister
 {
-    private List<String> elements = null; 
+    private List<String> beans = null;
     
     private String tag = "";
-     
-    public Canister(String tag, List<String> tmpList)
+    
+    public Canister(String tag, List<String> beans)
     {
-        this.tag = tag; 
-        this.elements = new ArrayList<String>(tmpList);
+        this.tag = tag;
+        this.beans = new ArrayList<String>(beans);
     }
-
-    public List<String> getElements()
+    
+    public Canister(String tag, String bean)
     {
-        return elements;
+        this.tag = tag;
+        this.beans = new ArrayList<String>();
+        this.beans.add(bean);
     }
-
-    public void setElements(List<String> elements)
+    
+    public List<String> getbeans()
     {
-        this.elements = elements;
+        return beans;
     }
-
+    
     public String getTag()
     {
         return tag;
     }
-
-    public void setTag(String tag)
+    
+    void add(String element)
     {
-        this.tag = tag;
+        this.beans.add(element);
+        QuickSort.sort(this.beans);
     }
-
+    
+    List<String> search(String searchBean)
+    {
+        List<String> searchElement = new ArrayList<String>();
+        List<Integer> indexList = BiSearch.binaryInclusiveExtendedSearch(this.beans, searchBean);
+        
+        int i = 0;
+        int indexListSize = indexList.size();
+        
+        if (indexList.size() > 0)
+        {
+            for (; i < indexListSize; i++)
+            {
+                searchElement.add(this.beans.get(indexList.get(i)));
+            }
+        }
+        
+        return searchElement;
+        
+    }
     
     @Override
     public String toString()
     {
         StringBuilder canSb = new StringBuilder();
         canSb.append("tag:").append(tag).append("\n");
-        canSb.append("elements:").append(elements.toString());
+        canSb.append("beans:").append(beans.toString()).append("\n");
         
-        return canSb.toString(); 
+        return canSb.toString();
     }
-    
     
 }
