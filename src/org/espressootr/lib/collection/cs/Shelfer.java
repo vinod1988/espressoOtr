@@ -6,6 +6,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+import org.espressootr.lib.utils.InitUtil;
+
 public class Shelfer
 {
     private List<Canister> shelf = null;
@@ -20,8 +22,8 @@ public class Shelfer
         int i = 0;
         int elementSize = beans.size();
         
-        char prevFrontChar = ' ';
-        char currentFrontChar = ' ';
+        char prevFrontChar = InitUtil.EMPTY_CHAR;
+        char currentFrontChar = InitUtil.EMPTY_CHAR;
         
         if (shelf == null)
         {

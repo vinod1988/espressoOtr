@@ -1,10 +1,6 @@
 package org.espressootr.lib.encoding;
 
-/**
- * getUnicode Value return class.
- * @author AhnSeongHyun
- *
- */
+
 public class Unicode
 {
     public static String getUnicodeFromString(String source)
