@@ -1,5 +1,4 @@
-package ori.espressootr.test;
-
+package org.espressootr.test;
  
 
 import java.util.ArrayList;
@@ -9,12 +8,11 @@ import org.espressootr.lib.collection.CollectionConverter;
 import org.junit.Before;
 import org.junit.Test;
 
-public class UT_CollectionConverter_Object
+public class UT_CollectionConverter_Integer
 {
-    Object[] array = new Object[5];
-    List<Object> list = new ArrayList<Object>();
+    int[] array = new int[5];
+    List<Integer> list = new ArrayList<Integer>();
 
-    
     @Before
     public void setUp() throws Exception
     {
@@ -26,29 +24,27 @@ public class UT_CollectionConverter_Object
     }
 
     @Test
-    public void test_ArrayToObjectList()
+    public void test_ArrayToIntegerList()
     {
-	List<Object> cnvList = CollectionConverter.array2List(array);
+
+	List<Integer> cnvList = CollectionConverter.intArray2List(array);
 
 	org.junit.Assert.assertEquals(5, cnvList.size());
 	
-
 	for(int i =0; i<cnvList.size(); i++)
 	    org.junit.Assert.assertEquals(Integer.valueOf(i), cnvList.get(i));    
-	
     }
-    
 
     @Test
-    public void test_ObjectListToArray()
+    public void test_IntegerListToArray()
     {
-	Object[] cnvArray = CollectionConverter.list2Array(list);
+	int[] cnvArray = CollectionConverter.intList2Array(list);
 
 	org.junit.Assert.assertEquals(5, cnvArray.length);
 	
 	for(int i =0; i<cnvArray.length; i++)
 	    org.junit.Assert.assertEquals(i, cnvArray[i]);    
+	    
+	
     }
-    
-
 }

@@ -1,4 +1,4 @@
-package ori.espressootr.test;
+package org.espressootr.test;
 
 
 import java.util.List;

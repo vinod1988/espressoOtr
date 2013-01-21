@@ -1,15 +1,15 @@
-package ori.espressootr.test.ts;
+package org.espressootr.test.ts;
 
 import junit.framework.Test;
 import junit.framework.TestSuite;
 
+import org.espressootr.test.UT_CollectionConverter_Integer;
+import org.espressootr.test.UT_CollectionConverter_Object;
+import org.espressootr.test.UT_CollectionConverter_String;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
-import ori.espressootr.test.UT_CollectionConverter_Integer;
-import ori.espressootr.test.UT_CollectionConverter_Object;
-import ori.espressootr.test.UT_CollectionConverter_String;
 
 @RunWith(Suite.class)
 @SuiteClasses({ UT_CollectionConverter_Integer.class, UT_CollectionConverter_Object.class, UT_CollectionConverter_String.class })
