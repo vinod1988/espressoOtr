@@ -1,18 +1,17 @@
-package org.espressootr.lib.collection.cs;
-
- 
+package org.espressootr.lib.collection.cs; 
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.espressootr.lib.search.BiSearch;
 import org.espressootr.lib.sort.QuickSort;
+import org.espressootr.lib.utils.InitUtil;
  
 public class Canister
 {
     private List<String> beans = null;
     
-    private String tag = "";
+    private String tag = InitUtil.EMPTY_STRING;
     
     public Canister(String tag, List<String> beans)
     {

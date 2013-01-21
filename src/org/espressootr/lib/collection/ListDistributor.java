@@ -29,10 +29,10 @@ public class ListDistributor
             
             int index = 0;
             for (int i = 0; i < targetList.size(); i++)
-            { 
+            {
                 distributedList.get(index).add(targetList.get(i));
                 
-                if (index != distributedList.size()-1)
+                if (index != distributedList.size() - 1)
                 {
                     if (distributedList.get(index).size() == eachCapacity)
                     {

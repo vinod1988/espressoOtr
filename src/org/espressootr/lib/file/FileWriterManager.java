@@ -27,5 +27,13 @@ public class FileWriterManager
 	out.close();
 
     }
+    
+    public static void writeToFile(String filePath, String content, boolean append) throws IOException
+    {
+        BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(filePath, append), Encoding.getJVMEncoding()));
+
+        out.write(content); 
+        out.close();
+    }
 
 }
