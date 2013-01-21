@@ -1,5 +1,5 @@
-package org.espressootr.lib.json; 
-
+package org.espressootr.lib.json;
+ 
 import com.google.gson.Gson;
 
 public class JsonBodum
@@ -15,4 +15,5 @@ public class JsonBodum
     {
         return gson.fromJson(json, classOfT);
     } 
+ 
 }
