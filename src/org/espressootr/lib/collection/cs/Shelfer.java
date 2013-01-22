@@ -3,9 +3,10 @@ package org.espressootr.lib.collection.cs;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
 
-import org.espressootr.lib.utils.InitUtil;
+import org.espressootr.lib.utils.InitUtil; 
 
 public class Shelfer
 {
@@ -201,4 +202,43 @@ public class Shelfer
         return toStrSb.toString();
         
     }
+
+    public HashMap<String, Canister> toHashMap()
+    {
+        HashMap<String, Canister> shelfMap = new HashMap<String, Canister>();
+        
+        for (Canister canister : this.shelf)
+        {
+            shelfMap.put(canister.getTag(), canister);
+        }
+        
+        return shelfMap; 
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
