@@ -3,7 +3,7 @@ package org.espressootr.lib.string;
 public class StringComparer
 {
     public static boolean compareTo(int size, String target, String compare)
-    {// strncmp
+    {
 
         boolean result = true;
         int i = 0;

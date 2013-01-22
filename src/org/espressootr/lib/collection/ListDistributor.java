@@ -8,10 +8,12 @@ import org.espressootr.lib.utils.InitUtil;
 
 public class ListDistributor
 {
+    
     @SuppressWarnings({ "rawtypes", "unchecked" })
     public static HashMap<Integer, List> distributeListToSubList(int subListCount, List targetList)
     {
         HashMap<Integer, List> distributedList = new HashMap<Integer, List>();
+        int targetListCount = targetList.size();
         
         if (subListCount == InitUtil.ZERO)
         {
@@ -19,16 +21,14 @@ public class ListDistributor
         }
         else
         {
-            
             for (int i = 0; i < subListCount; i++)
-            {
                 distributedList.put(i, new ArrayList<Object>());
-            }
             
             int eachCapacity = targetList.size() / subListCount;
             
             int index = 0;
-            for (int i = 0; i < targetList.size(); i++)
+            
+            for (int i = 0; i < targetListCount; i++)
             {
                 distributedList.get(index).add(targetList.get(i));
                 
@@ -64,10 +64,7 @@ public class ListDistributor
             {
                 toIndex = i + capacityCount;
                 
-                if (i > targetList.size())
-                {
-                    break;
-                }
+                if (i > targetList.size()) break;
                 
                 if (toIndex > targetList.size()) toIndex = targetList.size();
                 

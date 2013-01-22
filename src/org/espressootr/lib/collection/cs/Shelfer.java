@@ -1,6 +1,5 @@
 package org.espressootr.lib.collection.cs;
 
- 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -46,7 +45,6 @@ public class Shelfer
             {
                 if (tmpList.size() != 0)
                 {
-                    
                     shelf.add(new Canister(String.valueOf(prevFrontChar), tmpList));
                     
                     tmpList.clear();
@@ -159,7 +157,6 @@ public class Shelfer
     
     private int getCanisterIndex(String searchTag)
     {
-        
         int canisterIndex = -1;
         int start, end, midPt;
         final int FIND = 0;
@@ -186,4 +183,22 @@ public class Shelfer
         return canisterIndex;
     }
     
+    @Override
+    public String toString()
+    {
+        StringBuilder toStrSb = new StringBuilder();
+        
+        for (int i = 0; i < this.shelf.size(); i++)
+        {
+            toStrSb.append(this.shelf.get(i).getTag());
+            toStrSb.append(";");
+            
+            toStrSb.append(this.shelf.get(i).getbeans());
+            toStrSb.append("\n");
+            
+        }
+        
+        return toStrSb.toString();
+        
+    }
 }
