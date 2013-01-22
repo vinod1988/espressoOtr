@@ -12,7 +12,7 @@ import org.espressootr.lib.sort.QuickSort;
 import org.junit.Before;
 import org.junit.Test;
 
-public class UT_CanisterShelfer
+public class UT_Shelfer
 {
     
     List<String> testSet = null;
@@ -41,6 +41,27 @@ public class UT_CanisterShelfer
         HashMap<String, Canister> csMap = testShelf.toHashMap();
         
         org.junit.Assert.assertEquals(138, csMap.size());
+    }
+    
+    @Test
+    public void test_remove_tag() throws IOException
+    {
+        test_CreateShelf();
+        
+        this.testShelf.remove("꿈");
+        
+        // System.out.println(this.testShelf.toString());
+        org.junit.Assert.assertEquals(137, testShelf.size());
+        
+    }
+    
+    @Test
+    public void test_toJson() throws IOException
+    {
+        test_CreateShelf();
+        
+        //System.out.println(this.testShelf.toJson());
+        
     }
     
 }

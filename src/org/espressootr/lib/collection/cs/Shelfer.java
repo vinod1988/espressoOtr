@@ -6,6 +6,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 
+import org.espressootr.lib.json.JsonBodum;
 import org.espressootr.lib.utils.InitUtil; 
 
 public class Shelfer
@@ -88,7 +89,7 @@ public class Shelfer
     public void add(String bean)
     {
         String tag = String.valueOf(bean.charAt(0));
-        
+       
         boolean isContain = this.containTag(tag);
         
         if (isContain)
@@ -100,6 +101,23 @@ public class Shelfer
             shelf.add(new Canister(tag, bean));
         }
     }
+    
+    public void remove(int index)
+    { 
+        if(this.shelf.size() != 0)
+        {
+            this.shelf.remove(index);
+        }
+    }
+    
+    public void remove(String tag)
+    {
+        int index = getCanisterIndex(tag);
+        
+        this.remove(index);
+        
+    }
+    
     
     private boolean containTag(String tag)
     {
@@ -184,6 +202,26 @@ public class Shelfer
         return canisterIndex;
     }
     
+   
+    public HashMap<String, Canister> toHashMap()
+    {
+        HashMap<String, Canister> shelfMap = new HashMap<String, Canister>();
+        
+        for (Canister canister : this.shelf)
+        {
+            shelfMap.put(canister.getTag(), canister);
+        }
+        
+        return shelfMap; 
+    }
+    
+    
+    public String toJson()
+    {
+        return JsonBodum.toJson(this.shelf);
+    }
+    
+    
     @Override
     public String toString()
     {
@@ -203,17 +241,8 @@ public class Shelfer
         
     }
 
-    public HashMap<String, Canister> toHashMap()
-    {
-        HashMap<String, Canister> shelfMap = new HashMap<String, Canister>();
-        
-        for (Canister canister : this.shelf)
-        {
-            shelfMap.put(canister.getTag(), canister);
-        }
-        
-        return shelfMap; 
-    }
+    
+    
 }
 
 
