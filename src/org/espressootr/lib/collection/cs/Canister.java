@@ -2,8 +2,8 @@ package org.espressootr.lib.collection.cs;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import org.espressootr.lib.search.BiSearch;
+ 
+import org.espressootr.lib.search.Searcher;
 import org.espressootr.lib.sort.QuickSort;
 import org.espressootr.lib.utils.InitUtil;
  
@@ -45,7 +45,7 @@ public class Canister
     List<String> search(String searchBean)
     {
         List<String> searchElement = new ArrayList<String>();
-        List<Integer> indexList = BiSearch.binaryInclusiveExtendedSearch(this.beans, searchBean);
+        List<Integer> indexList = Searcher.extIncSearch(this.beans, searchBean);
         
         int i = 0;
         int indexListSize = indexList.size();
