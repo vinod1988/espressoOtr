@@ -1,7 +1,14 @@
 
-# espressootr(Espresso on the rock)
+### espressootr(Espresso on the rock)
 
-goal : Do programming, drinking coffee. Releaxing. 
+goal : Do programming, drinking coffee. Relaxing. 
 <br/>
 
-It's Plain Java Libray for processing based on text.  
+It's Plain Java Library for processing text, and searching. 
+
+
+##Environments
+
+JDK  : 1.6 above
+build: maven
+
