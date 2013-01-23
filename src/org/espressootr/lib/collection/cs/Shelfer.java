@@ -6,12 +6,13 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 
-import org.espressootr.lib.json.JsonBodum;
+import org.espressootr.lib.json.JsonBodum; 
 import org.espressootr.lib.utils.InitUtil; 
 
 public class Shelfer
 {
     private List<Canister> shelf = null;
+    
     
     public Shelfer()
     {

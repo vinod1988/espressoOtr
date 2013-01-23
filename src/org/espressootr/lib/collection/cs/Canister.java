@@ -5,7 +5,9 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.espressootr.lib.json.JsonBodum;
-import org.espressootr.lib.search.Searcher;
+import org.espressootr.lib.search.BeanSearch;
+import org.espressootr.lib.search.ExtendedInclusiveBiSearch;
+
 import org.espressootr.lib.sort.QuickSort;
 import org.espressootr.lib.utils.InitUtil;
 
@@ -13,6 +15,20 @@ public class Canister
 {
     private String tag = InitUtil.EMPTY_STRING;
     private List<String> beans = null;
+    private BeanSearch searcher = null;
+    
+    @SuppressWarnings("unused")
+    private Canister()
+    {
+        searcher = new ExtendedInclusiveBiSearch();
+    }
+     
+    public Canister(String tag, String bean)
+    {
+        this.tag = tag;
+        this.beans = new ArrayList<String>();
+        this.beans.add(bean);
+    }
     
     public Canister(String tag, List<String> beans)
     {
@@ -25,18 +41,12 @@ public class Canister
         this.tag = tag;
         this.beans = new ArrayList<String>(beans);
         
-        if(isSorted==false)
+        if (isSorted == false)
         {
             QuickSort.sort(this.beans);
         }
     }
     
-    public Canister(String tag, String bean)
-    {
-        this.tag = tag;
-        this.beans = new ArrayList<String>();
-        this.beans.add(bean);
-    }
     
     public List<String> getbeans()
     {
@@ -48,6 +58,31 @@ public class Canister
         return tag;
     }
     
+    public BeanSearch getSearcher()
+    {
+        return searcher;
+    }
+    
+    public void setSearcher(BeanSearch searcher)
+    {
+        this.searcher = searcher;
+    }
+    
+    public String toJson()
+    {
+        return JsonBodum.toJson(this);
+    }
+    
+    public HashMap<String, List<String>> toHashMap()
+    {
+        HashMap<String, List<String>> canisterMap = new HashMap<String, List<String>>();
+        
+        canisterMap.put(this.getTag(), this.beans);
+        
+        return canisterMap;
+    }
+    
+    
     void add(String element)
     {
         this.beans.add(element);
@@ -57,7 +92,7 @@ public class Canister
     List<String> search(String searchBean)
     {
         List<String> searchElement = new ArrayList<String>();
-        List<Integer> indexList = Searcher.extIncSearch(this.beans, searchBean);
+        List<Integer> indexList = searcher.search(this.beans, searchBean);
         
         int i = 0;
         int indexListSize = indexList.size();
@@ -74,19 +109,7 @@ public class Canister
         
     }
     
-    public String toJson()
-    {
-        return JsonBodum.toJson(this);
-    }
-    
-    public HashMap<String, List<String>> toHashMap()
-    {
-        HashMap<String, List<String>> canisterMap = new HashMap<String, List<String>>();
-        
-        canisterMap.put(this.getTag(), this.beans);
-        
-        return canisterMap;
-    }
+
     
     @Override
     public String toString()
