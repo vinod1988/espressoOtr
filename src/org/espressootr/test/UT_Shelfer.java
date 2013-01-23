@@ -59,8 +59,7 @@ public class UT_Shelfer
     public void test_toJson() throws IOException
     {
         test_CreateShelf();
-        
-        //System.out.println(this.testShelf.toJson());
+        System.out.println(this.testShelf.toJson());
         
     }
     
