@@ -6,13 +6,12 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 
-import org.espressootr.lib.json.JsonBodum; 
-import org.espressootr.lib.utils.InitUtil; 
+import org.espressootr.lib.json.JsonBodum;
+import org.espressootr.lib.utils.InitUtil;
 
 public class Shelfer
 {
     private List<Canister> shelf = null;
-    
     
     public Shelfer()
     {
@@ -87,10 +86,17 @@ public class Shelfer
         shelf.clear();
     }
     
+    public void add(Canister canister)
+    {
+        if (this.shelf != null) this.shelf.add(canister);
+        
+        this.reArrange();
+    }
+    
     public void add(String bean)
     {
         String tag = String.valueOf(bean.charAt(0));
-       
+        
         boolean isContain = this.containTag(tag);
         
         if (isContain)
@@ -104,8 +110,8 @@ public class Shelfer
     }
     
     public void remove(int index)
-    { 
-        if(this.shelf.size() != 0)
+    {
+        if (this.shelf.size() != 0)
         {
             this.shelf.remove(index);
         }
@@ -119,7 +125,6 @@ public class Shelfer
         
     }
     
-    
     private boolean containTag(String tag)
     {
         boolean isContained = true;
@@ -131,6 +136,15 @@ public class Shelfer
         }
         
         return isContained;
+        
+    }
+    
+    public List<Canister> getShelf()
+    {
+        if (this.shelf != null)
+            return new ArrayList<Canister>(this.shelf);
+        else
+            return null;
         
     }
     
@@ -159,6 +173,11 @@ public class Shelfer
         }
         
         return searchResult;
+    }
+    
+    public void reArrange()
+    {
+        if (this.shelf != null) this.qsort(this.shelf);
     }
     
     private void qsort(List<Canister> sortingTarget)
@@ -203,7 +222,6 @@ public class Shelfer
         return canisterIndex;
     }
     
-   
     public HashMap<String, Canister> toHashMap()
     {
         HashMap<String, Canister> shelfMap = new HashMap<String, Canister>();
@@ -213,15 +231,13 @@ public class Shelfer
             shelfMap.put(canister.getTag(), canister);
         }
         
-        return shelfMap; 
+        return shelfMap;
     }
-    
     
     public String toJson()
     {
         return JsonBodum.toJson(this.shelf);
     }
-    
     
     @Override
     public String toString()
@@ -241,34 +257,5 @@ public class Shelfer
         return toStrSb.toString();
         
     }
-
-    
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
