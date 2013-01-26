@@ -11,10 +11,10 @@ Goal : Do programming with drinking coffee.
 * Total 17 packages. 
 * Include below:
 
-   Hangul(Korean Language) Jaso Separator/Assembler, 
-Caniseter & Shelfer which Data Structure based on Binary Search, 
-Search Classes for String Searching, 
-FastSpliter based on StringBuilder, ListDistributor.
+   Hangul(Korean Language) Jaso Separator/Assembler, <br/>
+Caniseter & Shelfer which Data Structure based on Binary Search, <br/>
+Search Classes for String Searching, <br/>
+FastSpliter based on StringBuilder, ListDistributor.<br/>
 
 ###Environments
 
