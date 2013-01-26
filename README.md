@@ -18,7 +18,7 @@ FastSpliter based on StringBuilder, ListDistributor.<br/>
 
 ###Environments
 
-* JDK  : 1.6 above<b
+* JDK  : 1.6 above<br/>
 * build: maven
 
 
