@@ -1,17 +1,9 @@
 package org.espressootr.lib.encoding;
 
  
-public class Encoding
+public final class Encoding
 {
-
-    /**
-     * @deprecated unused
-     */
-    private Encoding()
-    {
-	throw new AssertionError(); 
-    }
-
+ 
     /**
      * @return encoding String
      */

@@ -1,7 +1,7 @@
 package org.espressootr.lib.encoding;
 
 
-public class Unicode
+public final class Unicode
 {
     public static String getUnicodeFromString(String source)
     {
