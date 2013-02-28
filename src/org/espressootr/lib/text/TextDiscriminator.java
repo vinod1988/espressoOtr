@@ -7,7 +7,7 @@ import org.espressootr.lib.lang.Chinese;
 import org.espressootr.lib.utils.InitUtil;
 import org.espressootr.lib.utils.SplitterUtil;
 
-public class TextDiscriminator
+public final class TextDiscriminator
 {
     
     public static boolean isHangul(char gram)
