@@ -2,7 +2,7 @@ package org.espressootr.lib.utils;
 
 import java.util.Random;
 
-public class RandomUtils
+public final class RandomUtils
 {
     
     public static int getRandomNumber(int from, int to)
