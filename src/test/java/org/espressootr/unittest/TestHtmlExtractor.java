@@ -68,4 +68,11 @@ public class TestHtmlExtractor
         assertEquals(2,imgSrcList.size());
     }
     
+    @Test
+    public void testGetBodyString() throws MalformedURLException, IOException
+    {
+        String str = HtmlExtractor.getBodyString(targetUrl); 
+        
+    }
+    
 }

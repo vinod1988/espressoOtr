@@ -6,6 +6,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.espressootr.lib.utils.InitUtil;
+
 import net.htmlparser.jericho.Element;
 import net.htmlparser.jericho.Source;
 
@@ -88,5 +90,22 @@ public class HtmlExtractor
         
         return imgSrcList;
     }
+
+    public static String getBodyString(String url) throws MalformedURLException, IOException
+    { 
+        String bodyString = InitUtil.EMPTY_STRING;
+        Source source = new Source(new URL(url));
+        
+        for (Element e : source.getAllElements())
+        {
+            if (e.getName().equals("body"))
+            {
+                bodyString = e.getTextExtractor().toString(); 
+            }
+        }
+        
+        return bodyString;
+    }
+    
     
 }
