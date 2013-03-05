@@ -53,22 +53,19 @@ public class TestHtmlExtractor
     }
     
     @Test
-    public void testGetLinkTag()
+    public void testGetLinkTag() throws MalformedURLException, IOException
     {
-        String linkUrl = HtmlExtractor.getLinkTagValue(targetUrl);
+        List<String> linkUrlList = HtmlExtractor.getLinkTagValue(targetUrl);
         
-        // TODO:WRITE TEST CASE
-        fail("Not yet implemented");
-        
+        assertEquals(27,linkUrlList.size());
     }
     
     @Test
-    public void testGetImgTag()
+    public void testGetImgTag() throws MalformedURLException, IOException
     {
-        String imgUrl = HtmlExtractor.getImgTagValue(targetUrl);
+        List<String> imgSrcList = HtmlExtractor.getImgTagValue(targetUrl);
         
-        // TODO:WRITE TEST CASE
-        fail("Not yet implemented");
+        assertEquals(2,imgSrcList.size());
     }
     
 }

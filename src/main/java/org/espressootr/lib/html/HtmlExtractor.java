@@ -51,18 +51,42 @@ public class HtmlExtractor
         
         return tagList;
     }
-
-    public static String getLinkTagValue(String targetUrl)
+    
+    public static List<String> getLinkTagValue(String url) throws MalformedURLException, IOException
     {
-        // TODO Auto-generated method stub
-        return null; 
+        List<String> hrefList = new ArrayList<String>();
+        
+        Source source = new Source(new URL(url));
+        
+        for (Element e : source.getAllElements())
+        {
+            if (e.getName().equals("a"))
+            {
+                hrefList.add(e.getAttributeValue("href"));
+                
+            }
+        }
+        
+        return hrefList;
         
     }
-
-    public static String getImgTagValue(String targetUrl)
+    
+    public static List<String> getImgTagValue(String url) throws MalformedURLException, IOException
     {
-        // TODO Auto-generated method stub
-        return null;
+        List<String> imgSrcList = new ArrayList<String>();
+        
+        Source source = new Source(new URL(url));
+        
+        for (Element e : source.getAllElements())
+        {
+            if (e.getName().equals("img"))
+            {
+                imgSrcList.add(e.getAttributeValue("src"));
+                
+            }
+        }
+        
+        return imgSrcList;
     }
     
 }
