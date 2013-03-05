@@ -1,16 +1,16 @@
 package org.espressootr.lib.conf;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class ConfigMap
 {
     private Map<String, Object> confKV = null;
     
-    @SuppressWarnings("unused")
-    private ConfigMap()
+ 
+    public ConfigMap()
     {
-        throw new AssertionError();
-        
+        confKV = new HashMap<String, Object>(); 
     }
     
     public ConfigMap(Map<String, Object> confKV)
