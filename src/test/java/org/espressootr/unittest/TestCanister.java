@@ -5,14 +5,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import org.espressootr.lib.collection.cs.Canister; 
+import org.espressootr.lib.collection.cs.list.ListCanister;
 import org.junit.Before;
 import org.junit.Test;
 
 public class TestCanister
 {
     
-    Canister canitser = null;
+    ListCanister canitser = null;
     
     @Before
     public void setUp() throws Exception
@@ -22,7 +22,7 @@ public class TestCanister
         testCanister.add("1sdfs");
         testCanister.add("1223a2331323");
         testCanister.add("1231fsdfsf323");
-        canitser = new Canister("1", testCanister, false);
+        canitser = new ListCanister("1", testCanister, false);
         
     }
     

@@ -6,8 +6,8 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
-import org.espressootr.lib.collection.cs.Canister;
-import org.espressootr.lib.collection.cs.Shelfer;
+import org.espressootr.lib.collection.cs.list.ListCanister;
+import org.espressootr.lib.collection.cs.list.ListShelfer;
 import org.espressootr.lib.file.FileReaderManager;
 import org.espressootr.lib.sort.QuickSort;
 import org.junit.Before;

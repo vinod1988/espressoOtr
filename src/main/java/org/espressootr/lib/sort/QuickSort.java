@@ -1,8 +1,10 @@
 package org.espressootr.lib.sort;
 
+
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+
 
 public class QuickSort
 {
@@ -70,7 +72,6 @@ public class QuickSort
     
     public static final void sort(List<String> sortingTarget)
     {
-        
         Collections.sort(sortingTarget, stringComp);
         
     }
@@ -94,4 +95,6 @@ public class QuickSort
         
         Collections.sort(sortingTarget, totalComapartor);
     }
+
+ 
 }

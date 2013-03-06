@@ -1,60 +1,61 @@
-package org.espressootr.lib.collection.cs;
+package org.espressootr.lib.collection.cs.map;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.espressootr.lib.json.JsonBodum;
 import org.espressootr.lib.utils.InitUtil;
 
-public class Shelfer
+public class MapShelfer
 {
-    private List<Canister> shelf = null;
+    private List<MapCanister> shelf = null;
     
-    public Shelfer()
+    public MapShelfer()
     {
-        shelf = new ArrayList<Canister>();
+        shelf = new ArrayList<MapCanister>();
     }
     
-    public Shelfer(List<String> beans)
+    public MapShelfer(Map<String, Object> beans)
     {
-        int i = 0;
-        int elementSize = beans.size();
+        int i = 0; 
         
         char prevFrontChar = InitUtil.EMPTY_CHAR;
         char currentFrontChar = InitUtil.EMPTY_CHAR;
         
         if (shelf == null)
         {
-            shelf = new ArrayList<Canister>();
+            shelf = new ArrayList<MapCanister>();
         }
         
-        List<String> tmpList = new ArrayList<String>();
+        Map<String, Object> tmpMap = new HashMap<String, Object>();
         
-        for (; i < elementSize; i++)
+        for (String beanKey : beans.keySet())
         {
-            currentFrontChar = beans.get(i).charAt(0);
+            currentFrontChar = beanKey.charAt(0);
             
             if (i == 0) prevFrontChar = currentFrontChar;
             
             if (prevFrontChar == currentFrontChar)
             {
-                tmpList.add(beans.get(i));
+                tmpMap.put(beanKey, beans.get(beanKey));
             }
             else
             {
-                if (tmpList.size() != 0)
+                if (tmpMap.size() != 0)
                 {
-                    shelf.add(new Canister(String.valueOf(prevFrontChar), tmpList));
+                    shelf.add(new MapCanister(String.valueOf(prevFrontChar), tmpMap));
                     
-                    tmpList.clear();
-                    tmpList.add(beans.get(i));
+                    tmpMap.clear();
+                    tmpMap.put(beanKey, beans.get(beanKey));
                 }
             }
             
             prevFrontChar = currentFrontChar;
+            i++;
         }
         
         this.qsort(this.shelf);
@@ -86,26 +87,26 @@ public class Shelfer
         shelf.clear();
     }
     
-    public void add(Canister canister)
+    public void add(MapCanister MapCanister)
     {
-        if (this.shelf != null) this.shelf.add(canister);
+        if (this.shelf != null) this.shelf.add(MapCanister);
         
         this.reArrange();
     }
     
-    public void add(String bean)
+    public void add(String beanKey, Object beanValue)
     {
-        String tag = String.valueOf(bean.charAt(0));
+        String tag = String.valueOf(beanKey.charAt(0));
         
         boolean isContain = this.containTag(tag);
         
         if (isContain)
         {
-            this.get(tag).add(bean);
+            this.get(tag).add(beanKey, beanValue);
         }
         else
         {
-            shelf.add(new Canister(tag, bean));
+            shelf.add(new MapCanister(tag, beanKey, beanValue));
         }
     }
     
@@ -119,7 +120,7 @@ public class Shelfer
     
     public void remove(String tag)
     {
-        int index = getCanisterIndex(tag);
+        int index = getMapCanisterIndex(tag);
         
         this.remove(index);
         
@@ -128,7 +129,7 @@ public class Shelfer
     private boolean containTag(String tag)
     {
         boolean isContained = true;
-        int index = this.getCanisterIndex(tag);
+        int index = this.getMapCanisterIndex(tag);
         
         if (index < 0)
         {
@@ -139,37 +140,37 @@ public class Shelfer
         
     }
     
-    public List<Canister> getShelf()
+    public List<MapCanister> getShelf()
     {
         if (this.shelf != null)
-            return new ArrayList<Canister>(this.shelf);
+            return new ArrayList<MapCanister>(this.shelf);
         else
             return null;
         
     }
     
-    public Canister get(String searchKeyword)
+    public MapCanister get(String searchKeyword)
     {
-        Canister canister = null;
+        MapCanister MapCanister = null;
         
-        int index = this.getCanisterIndex(String.valueOf(searchKeyword.charAt(0)));
+        int index = this.getMapCanisterIndex(String.valueOf(searchKeyword.charAt(0)));
         
         if (index >= 0)
         {
-            canister = this.shelf.get(index);
+            MapCanister = this.shelf.get(index);
             
         }
-        return canister;
+        return MapCanister;
     }
     
-    public List<String> search(String searchKeyword)
+    public Object search(String searchKeyword)
     {
-        List<String> searchResult = Collections.emptyList();
-        Canister searchedCanister = this.get(searchKeyword);
+        Object searchResult = new Object();
+        MapCanister searchedMapCanister = this.get(searchKeyword);
         
-        if (searchedCanister != null)
+        if (searchedMapCanister != null)
         {
-            searchResult = searchedCanister.search(searchKeyword);
+            searchResult = searchedMapCanister.search(searchKeyword);
         }
         
         return searchResult;
@@ -180,11 +181,11 @@ public class Shelfer
         if (this.shelf != null) this.qsort(this.shelf);
     }
     
-    private void qsort(List<Canister> sortingTarget)
+    private void qsort(List<MapCanister> sortingTarget)
     {
-        Comparator<Canister> comparator = new Comparator<Canister>() {
+        Comparator<MapCanister> comparator = new Comparator<MapCanister>() {
             
-            public int compare(Canister arg0, Canister arg1)
+            public int compare(MapCanister arg0, MapCanister arg1)
             {
                 return arg0.getTag().compareTo(arg1.getTag());
             }
@@ -194,9 +195,9 @@ public class Shelfer
         
     }
     
-    private int getCanisterIndex(String searchTag)
+    private int getMapCanisterIndex(String searchTag)
     {
-        int canisterIndex = -1;
+        int MapCanisterIndex = -1;
         int start, end, midPt;
         final int FIND = 0;
         
@@ -210,7 +211,7 @@ public class Shelfer
             
             if (result == FIND)
             {
-                canisterIndex = midPt;
+                MapCanisterIndex = midPt;
                 break;
             }
             else if (result < FIND)
@@ -219,16 +220,16 @@ public class Shelfer
                 end = midPt - 1;
         }
         
-        return canisterIndex;
+        return MapCanisterIndex;
     }
     
-    public HashMap<String, Canister> toHashMap()
+    public HashMap<String, MapCanister> toHashMap()
     {
-        HashMap<String, Canister> shelfMap = new HashMap<String, Canister>();
+        HashMap<String, MapCanister> shelfMap = new HashMap<String, MapCanister>();
         
-        for (Canister canister : this.shelf)
+        for (MapCanister MapCanister : this.shelf)
         {
-            shelfMap.put(canister.getTag(), canister);
+            shelfMap.put(MapCanister.getTag(), MapCanister);
         }
         
         return shelfMap;
@@ -257,5 +258,4 @@ public class Shelfer
         return toStrSb.toString();
         
     }
-    
 }

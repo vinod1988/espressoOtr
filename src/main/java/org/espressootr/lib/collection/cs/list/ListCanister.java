@@ -1,6 +1,6 @@
-package org.espressootr.lib.collection.cs;
+package org.espressootr.lib.collection.cs.list;
 
-import java.util.ArrayList;
+import java.util.ArrayList; 
 import java.util.HashMap;
 import java.util.List;
 
@@ -11,34 +11,35 @@ import org.espressootr.lib.search.ExtendedInclusiveBiSearch;
 import org.espressootr.lib.sort.QuickSort;
 import org.espressootr.lib.utils.InitUtil;
 
-public class Canister
+public class ListCanister 
 {
+    
     private String tag = InitUtil.EMPTY_STRING;
     private List<String> beans = null;
     private BeanSearch searcher = null;
     
     @SuppressWarnings("unused")
-    private Canister()
+    private ListCanister()
     {
         searcher = new ExtendedInclusiveBiSearch();
  
         
     }
      
-    public Canister(String tag, String bean)
+    public ListCanister(String tag, String bean)
     {
         this.tag = tag;
         this.beans = new ArrayList<String>();
         this.beans.add(bean);
     }
     
-    public Canister(String tag, List<String> beans)
+    public ListCanister(String tag, List<String> beans)
     {
         this.tag = tag;
         this.beans = new ArrayList<String>(beans);
     }
     
-    public Canister(String tag, List<String> beans, boolean isSorted)
+    public ListCanister(String tag, List<String> beans, boolean isSorted)
     {
         this.tag = tag;
         this.beans = new ArrayList<String>(beans);
@@ -111,8 +112,6 @@ public class Canister
         
     }
     
-
-    
     @Override
     public String toString()
     {
@@ -122,5 +121,7 @@ public class Canister
         
         return canSb.toString();
     }
+
+    
     
 }
