@@ -10,6 +10,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.espressootr.lib.sort.ClassComparator;
+import org.espressootr.lib.sort.QuickSort;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -90,6 +91,19 @@ public class TestQuickSort
 
     
     
-    
+   
+    @Test
+    public void testStringComp()
+    { 
+        List<String> strList = new ArrayList<String>();
+        
+        strList.add("t");
+        strList.add("a");
+        
+        QuickSort.sort(strList);
+         
+         
+    }
+
 
 }

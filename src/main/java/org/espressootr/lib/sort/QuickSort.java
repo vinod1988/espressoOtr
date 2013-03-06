@@ -12,8 +12,7 @@ public class QuickSort
     private static final Comparator<String> stringComp = new Comparator<String>() {
         
         public int compare(String arg0, String arg1)
-        {
-            
+        { 
             if (arg0 == null || arg1 == null) { return 0; }
             
             return arg0.compareTo(arg1);

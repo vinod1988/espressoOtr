@@ -107,6 +107,9 @@ public class ListShelfer
         {
             shelf.add(new ListCanister(tag, bean));
         }
+        
+        this.qsort(this.shelf);
+        
     }
     
     public void remove(int index)

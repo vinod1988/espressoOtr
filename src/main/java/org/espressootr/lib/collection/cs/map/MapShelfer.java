@@ -21,7 +21,7 @@ public class MapShelfer
     
     public MapShelfer(Map<String, Object> beans)
     {
-        int i = 0; 
+        int i = 0;
         
         char prevFrontChar = InitUtil.EMPTY_CHAR;
         char currentFrontChar = InitUtil.EMPTY_CHAR;
@@ -96,6 +96,7 @@ public class MapShelfer
     
     public void add(String beanKey, Object beanValue)
     {
+        
         String tag = String.valueOf(beanKey.charAt(0));
         
         boolean isContain = this.containTag(tag);
@@ -108,6 +109,8 @@ public class MapShelfer
         {
             shelf.add(new MapCanister(tag, beanKey, beanValue));
         }
+        
+        this.qsort(this.shelf);
     }
     
     public void remove(int index)
@@ -158,7 +161,6 @@ public class MapShelfer
         if (index >= 0)
         {
             MapCanister = this.shelf.get(index);
-            
         }
         return MapCanister;
     }
@@ -166,6 +168,7 @@ public class MapShelfer
     public Object search(String searchKeyword)
     {
         Object searchResult = new Object();
+        
         MapCanister searchedMapCanister = this.get(searchKeyword);
         
         if (searchedMapCanister != null)
@@ -197,7 +200,7 @@ public class MapShelfer
     
     private int getMapCanisterIndex(String searchTag)
     {
-        int MapCanisterIndex = -1;
+        int mapCanisterIndex = -1;
         int start, end, midPt;
         final int FIND = 0;
         
@@ -211,7 +214,7 @@ public class MapShelfer
             
             if (result == FIND)
             {
-                MapCanisterIndex = midPt;
+                mapCanisterIndex = midPt;
                 break;
             }
             else if (result < FIND)
@@ -220,7 +223,7 @@ public class MapShelfer
                 end = midPt - 1;
         }
         
-        return MapCanisterIndex;
+        return mapCanisterIndex;
     }
     
     public HashMap<String, MapCanister> toHashMap()
@@ -247,6 +250,7 @@ public class MapShelfer
         
         for (int i = 0; i < this.shelf.size(); i++)
         {
+            
             toStrSb.append(this.shelf.get(i).getTag());
             toStrSb.append(";");
             
