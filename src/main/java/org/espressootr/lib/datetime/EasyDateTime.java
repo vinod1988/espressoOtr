@@ -15,8 +15,7 @@ public class EasyDateTime
     
     public static Date getNow()
     {
-        return new Date();
-        
+        return new Date(); 
     }
     
 }

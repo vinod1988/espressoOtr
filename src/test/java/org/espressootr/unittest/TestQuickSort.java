@@ -11,6 +11,7 @@ import java.util.List;
 
 import org.espressootr.lib.sort.ClassComparator;
 import org.espressootr.lib.sort.QuickSort;
+import org.espressootr.unittest.mock.Person;
 import org.junit.Before;
 import org.junit.Test;
 
