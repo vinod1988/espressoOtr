@@ -96,8 +96,7 @@ public class MultiMapShelfer
         this.reArrange();
     }
     
-    @SuppressWarnings("rawtypes")
-    public void add(String beanKey, List beanValues)
+    public void add(String beanKey, Object beanValue)
     {
         
         String tag = String.valueOf(beanKey.charAt(0));
@@ -106,11 +105,11 @@ public class MultiMapShelfer
         
         if (isContain)
         {
-            this.get(tag).add(beanKey, beanValues);
+            this.get(tag).add(beanKey, beanValue);
         }
         else
         {
-            shelf.add(new MultiMapCanister(tag, beanKey, beanValues));
+            shelf.add(new MultiMapCanister(tag, beanKey, beanValue));
         }
         
         this.qsort(this.shelf);

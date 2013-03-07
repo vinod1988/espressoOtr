@@ -1,5 +1,6 @@
 package org.espressootr.lib.collection.cs.multmap;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,12 +22,14 @@ public class MultiMapCanister
         
     }
     
-    @SuppressWarnings("rawtypes")
-    public MultiMapCanister(String tag, String beanKey, List beanValues)
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public MultiMapCanister(String tag, String beanKey, Object beanValue)
     {
         this.tag = tag;
         this.beans = new HashMap<String, List>();
-        this.beans.put(beanKey, beanValues);
+        List mmValues = new ArrayList();
+        mmValues.add(beanValue);
+        this.beans.put(beanKey, mmValues);
     }
     
     @SuppressWarnings("rawtypes")
@@ -58,11 +61,38 @@ public class MultiMapCanister
         return JsonBodum.toJson(this);
     }
     
-    @SuppressWarnings("rawtypes")
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     void add(String beanKey, List beanValues)
-    {
-        this.beans.put(beanKey, beanValues);
+    { 
+        if(this.beans.containsKey(beanKey))
+        {
+            List mmValues = this.beans.get(beanKey); 
+            mmValues.addAll(beanValues);
+            
+        }
+        else
+        {
+            this.beans.put(beanKey, beanValues);
+        }
     }
+    
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    void add(String beanKey, Object beanValue)
+    { 
+        if(this.beans.containsKey(beanKey))
+        {
+            List mmValues = this.beans.get(beanKey); 
+            mmValues.add(beanValue);
+            
+        }
+        else
+        {
+            List mmValues = new ArrayList();
+            mmValues.add(beanValue);
+            this.beans.put(beanKey, mmValues);
+        }
+    }
+    
     
     public Object search(String searchKeyword)
     {
