@@ -51,7 +51,7 @@ public class ListCanister
     }
     
     
-    public List<String> getbeans()
+    public List<String> getBeans()
     {
         return beans;
     }

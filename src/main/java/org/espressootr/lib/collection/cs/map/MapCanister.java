@@ -33,11 +33,7 @@ public class MapCanister
         this.beans = new HashMap<String, Object>(beans);
     }
     
-    public Map<String, Object> getbeans()
-    {
-        return beans;
-    }
-    
+  
     public String getTag()
     {
         return tag;

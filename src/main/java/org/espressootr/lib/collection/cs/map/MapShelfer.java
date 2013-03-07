@@ -254,7 +254,7 @@ public class MapShelfer
             toStrSb.append(this.shelf.get(i).getTag());
             toStrSb.append(";");
             
-            toStrSb.append(this.shelf.get(i).getbeans());
+            toStrSb.append(this.shelf.get(i).getBeans());
             toStrSb.append("\n");
             
         }

@@ -6,14 +6,14 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
- 
+
 import org.espressootr.lib.json.JsonBodum;
 import org.espressootr.lib.utils.InitUtil;
 
 public class MultiMapShelfer
 {
     
- private List<MultiMapCanister> shelf = null;
+    private List<MultiMapCanister> shelf = null;
     
     public MultiMapShelfer()
     {
@@ -89,9 +89,33 @@ public class MultiMapShelfer
         shelf.clear();
     }
     
-    public void add(MultiMapCanister multiMapCanister)
+    public void add(MultiMapCanister multiMapCanister) throws Exception
     {
-        if (this.shelf != null) this.shelf.add(multiMapCanister);
+        if (this.shelf != null)
+        {
+            
+            if (this.containTag(multiMapCanister.getTag()))
+            {
+                int index = this.getMapCanisterIndex(multiMapCanister.getTag());
+                
+                if (index >= 0)
+                {
+                    for (String beanKey : multiMapCanister.getBeans().keySet())
+                    { 
+                        this.shelf.get(index).add(beanKey, multiMapCanister.getBeans().get(beanKey)); 
+                    }
+                }
+                else
+                {
+                    throw new Exception("no index but contain");
+                }
+            }
+            else
+            {
+                this.shelf.add(multiMapCanister);
+            }
+            
+        }
         
         this.reArrange();
     }
@@ -256,7 +280,7 @@ public class MultiMapShelfer
             toStrSb.append(this.shelf.get(i).getTag());
             toStrSb.append(";");
             
-            toStrSb.append(this.shelf.get(i).getbeans());
+            toStrSb.append(this.shelf.get(i).getBeans());
             toStrSb.append("\n");
             
         }

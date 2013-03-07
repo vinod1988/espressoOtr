@@ -1,4 +1,4 @@
-package org.espressootr.unittest;
+package org.espressootr.unittest.cs;
 
 import static org.junit.Assert.*;
 
@@ -34,7 +34,7 @@ public class TestMapShelfer
     @Test
     public void testBasicCategorizing()
     {
-        assertEquals(mapShelfer.get("a").getbeans().size(), 3); 
+        assertEquals(mapShelfer.get("a").getBeans().size(), 3); 
     }
      
     @Test

@@ -39,11 +39,7 @@ public class MultiMapCanister
         this.beans = new HashMap<String, List>(beans);
     }
     
-    @SuppressWarnings("rawtypes")
-    public Map<String, List> getbeans()
-    {
-        return beans;
-    }
+    
     
     public String getTag()
     {

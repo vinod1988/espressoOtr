@@ -1,4 +1,4 @@
-package org.espressootr.unittest;
+package org.espressootr.unittest.cs;
  
 import java.io.IOException;
 import java.util.ArrayList;
@@ -9,7 +9,7 @@ import org.espressootr.lib.collection.cs.list.ListCanister;
 import org.junit.Before;
 import org.junit.Test;
 
-public class TestCanister
+public class TestListCanister
 {
     
     ListCanister canitser = null;
