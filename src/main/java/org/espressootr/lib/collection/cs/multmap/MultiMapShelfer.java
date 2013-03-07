@@ -1,4 +1,4 @@
-package org.espressootr.lib.collection.cs.map;
+package org.espressootr.lib.collection.cs.multmap;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -6,20 +6,22 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+ 
 import org.espressootr.lib.json.JsonBodum;
 import org.espressootr.lib.utils.InitUtil;
 
-public class MapShelfer
+public class MultiMapShelfer
 {
-    private List<MapCanister> shelf = null;
     
-    public MapShelfer()
+ private List<MultiMapCanister> shelf = null;
+    
+    public MultiMapShelfer()
     {
-        shelf = new ArrayList<MapCanister>();
+        shelf = new ArrayList<MultiMapCanister>();
     }
     
-    public MapShelfer(Map<String, Object> beans)
+    @SuppressWarnings("rawtypes")
+    public MultiMapShelfer(Map<String, List> beans)
     {
         int i = 0;
         
@@ -28,10 +30,10 @@ public class MapShelfer
         
         if (shelf == null)
         {
-            shelf = new ArrayList<MapCanister>();
+            shelf = new ArrayList<MultiMapCanister>();
         }
         
-        Map<String, Object> tmpMap = new HashMap<String, Object>();
+        Map<String, List> tmpMap = new HashMap<String, List>();
         
         for (String beanKey : beans.keySet())
         {
@@ -47,7 +49,7 @@ public class MapShelfer
             {
                 if (tmpMap.size() != 0)
                 {
-                    shelf.add(new MapCanister(String.valueOf(prevFrontChar), tmpMap));
+                    shelf.add(new MultiMapCanister(String.valueOf(prevFrontChar), tmpMap));
                     
                     tmpMap.clear();
                     tmpMap.put(beanKey, beans.get(beanKey));
@@ -87,14 +89,15 @@ public class MapShelfer
         shelf.clear();
     }
     
-    public void add(MapCanister MapCanister)
+    public void add(MultiMapCanister multiMapCanister)
     {
-        if (this.shelf != null) this.shelf.add(MapCanister);
+        if (this.shelf != null) this.shelf.add(multiMapCanister);
         
         this.reArrange();
     }
     
-    public void add(String beanKey, Object beanValue)
+    @SuppressWarnings("rawtypes")
+    public void add(String beanKey, List beanValues)
     {
         
         String tag = String.valueOf(beanKey.charAt(0));
@@ -103,11 +106,11 @@ public class MapShelfer
         
         if (isContain)
         {
-            this.get(tag).add(beanKey, beanValue);
+            this.get(tag).add(beanKey, beanValues);
         }
         else
         {
-            shelf.add(new MapCanister(tag, beanKey, beanValue));
+            shelf.add(new MultiMapCanister(tag, beanKey, beanValues));
         }
         
         this.qsort(this.shelf);
@@ -143,18 +146,18 @@ public class MapShelfer
         
     }
     
-    public List<MapCanister> getShelf()
+    public List<MultiMapCanister> getShelf()
     {
         if (this.shelf != null)
-            return new ArrayList<MapCanister>(this.shelf);
+            return new ArrayList<MultiMapCanister>(this.shelf);
         else
             return null;
         
     }
     
-    public MapCanister get(String searchKeyword)
+    public MultiMapCanister get(String searchKeyword)
     {
-        MapCanister MapCanister = null;
+        MultiMapCanister MapCanister = null;
         
         int index = this.getMapCanisterIndex(String.valueOf(searchKeyword.charAt(0)));
         
@@ -169,11 +172,11 @@ public class MapShelfer
     {
         Object searchResult = new Object();
         
-        MapCanister searchedMapCanister = this.get(searchKeyword);
+        MultiMapCanister searchedMultiMapCanister = this.get(searchKeyword);
         
-        if (searchedMapCanister != null)
+        if (searchedMultiMapCanister != null)
         {
-            searchResult = searchedMapCanister.search(searchKeyword);
+            searchResult = searchedMultiMapCanister.search(searchKeyword);
         }
         
         return searchResult;
@@ -184,11 +187,11 @@ public class MapShelfer
         if (this.shelf != null) this.qsort(this.shelf);
     }
     
-    private void qsort(List<MapCanister> sortingTarget)
+    private void qsort(List<MultiMapCanister> sortingTarget)
     {
-        Comparator<MapCanister> comparator = new Comparator<MapCanister>() {
+        Comparator<MultiMapCanister> comparator = new Comparator<MultiMapCanister>() {
             
-            public int compare(MapCanister arg0, MapCanister arg1)
+            public int compare(MultiMapCanister arg0, MultiMapCanister arg1)
             {
                 return arg0.getTag().compareTo(arg1.getTag());
             }
@@ -226,13 +229,13 @@ public class MapShelfer
         return mapCanisterIndex;
     }
     
-    public HashMap<String, MapCanister> toHashMap()
+    public HashMap<String, MultiMapCanister> toHashMap()
     {
-        HashMap<String, MapCanister> shelfMap = new HashMap<String, MapCanister>();
+        HashMap<String, MultiMapCanister> shelfMap = new HashMap<String, MultiMapCanister>();
         
-        for (MapCanister mapCanister : this.shelf)
+        for (MultiMapCanister multiMapCanister : this.shelf)
         {
-            shelfMap.put(mapCanister.getTag(), mapCanister);
+            shelfMap.put(multiMapCanister.getTag(), multiMapCanister);
         }
         
         return shelfMap;

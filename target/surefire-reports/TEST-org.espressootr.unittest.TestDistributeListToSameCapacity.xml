@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.01" errors="0" skipped="0" tests="6" name="org.espressootr.unittest.TestDistributeListToSameCapacity">
+<testsuite failures="0" time="0.007" errors="0" skipped="0" tests="6" name="org.espressootr.unittest.TestDistributeListToSameCapacity">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files (x86)\Java\jdk1.6.0_38\jre\bin"/>
@@ -25,7 +25,7 @@
     <property name="java.vm.specification.vendor" value="Sun Microsystems Inc."/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 7"/>
-    <property name="classworlds.conf" value="C:\Users\AhnSeongHyun\workspace\.metadata\.plugins\org.eclipse.m2e.core\launches\m2conf5552136191677088466.tmp"/>
+    <property name="classworlds.conf" value="C:\Users\AhnSeongHyun\workspace\.metadata\.plugins\org.eclipse.m2e.core\launches\m2conf8159151895286874595.tmp"/>
     <property name="sun.jnu.encoding" value="MS949"/>
     <property name="java.library.path" value="C:\Program Files (x86)\Java\jdk1.6.0_38\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files (x86)/Java/jre6/bin/client;C:/Program Files (x86)/Java/jre6/bin;C:/Program Files (x86)/Java/jre6/lib/i386;C:\Program Files (x86)\Common Files\NetSarang;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\ ;C:\Program Files (x86)\Java\jdk1.6.0_38\bin;;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;D:\download\Utils\;C:\Program Files\TortoiseSVN\bin;D:\download\eclipse-jee-juno-SR1-win32\eclipse;;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -61,8 +61,8 @@
   </properties>
   <testcase time="0.002" classname="org.espressootr.unittest.TestDistributeListToSameCapacity" name="test_REGULAR_DISTRIBUTE"/>
   <testcase time="0.001" classname="org.espressootr.unittest.TestDistributeListToSameCapacity" name="test_ZERO_DISTRIBUTE"/>
-  <testcase time="0.001" classname="org.espressootr.unittest.TestDistributeListToSameCapacity" name="test_ONE_DISTRIBUTE"/>
-  <testcase time="0.001" classname="org.espressootr.unittest.TestDistributeListToSameCapacity" name="test_EXCEED_DISTRIBUTE"/>
-  <testcase time="0.001" classname="org.espressootr.unittest.TestDistributeListToSameCapacity" name="test_MINUS_FACTOR_DISTRIBUTE"/>
-  <testcase time="0.002" classname="org.espressootr.unittest.TestDistributeListToSameCapacity" name="test_IS_REMOVE_ORIGINAL"/>
+  <testcase time="0" classname="org.espressootr.unittest.TestDistributeListToSameCapacity" name="test_ONE_DISTRIBUTE"/>
+  <testcase time="0" classname="org.espressootr.unittest.TestDistributeListToSameCapacity" name="test_EXCEED_DISTRIBUTE"/>
+  <testcase time="0" classname="org.espressootr.unittest.TestDistributeListToSameCapacity" name="test_MINUS_FACTOR_DISTRIBUTE"/>
+  <testcase time="0" classname="org.espressootr.unittest.TestDistributeListToSameCapacity" name="test_IS_REMOVE_ORIGINAL"/>
 </testsuite>
