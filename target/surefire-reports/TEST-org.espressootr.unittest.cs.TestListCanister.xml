@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0" errors="0" skipped="0" tests="2" name="TestCollectionConverterInteger">
+<testsuite failures="0" time="0.086" errors="0" skipped="0" tests="2" name="org.espressootr.unittest.cs.TestListCanister">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files (x86)\Java\jdk1.6.0_38\jre\bin"/>
@@ -25,7 +25,7 @@
     <property name="java.vm.specification.vendor" value="Sun Microsystems Inc."/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 7"/>
-    <property name="classworlds.conf" value="C:\Users\AhnSeongHyun\workspace\.metadata\.plugins\org.eclipse.m2e.core\launches\m2conf4760388127869856320.tmp"/>
+    <property name="classworlds.conf" value="C:\Users\AhnSeongHyun\workspace\.metadata\.plugins\org.eclipse.m2e.core\launches\m2conf4089809016552238354.tmp"/>
     <property name="sun.jnu.encoding" value="MS949"/>
     <property name="java.library.path" value="C:\Program Files (x86)\Java\jdk1.6.0_38\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files (x86)/Java/jre6/bin/client;C:/Program Files (x86)/Java/jre6/bin;C:/Program Files (x86)/Java/jre6/lib/i386;C:\Program Files (x86)\Common Files\NetSarang;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\ ;C:\Program Files (x86)\Java\jdk1.6.0_38\bin;;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;D:\download\Utils\;C:\Program Files\TortoiseSVN\bin;D:\download\eclipse-jee-juno-SR1-win32\eclipse;;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -59,6 +59,6 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
   </properties>
-  <testcase time="0" classname="TestCollectionConverterInteger" name="test_ArrayToIntegerList"/>
-  <testcase time="0" classname="TestCollectionConverterInteger" name="test_IntegerListToArray"/>
+  <testcase time="0.006" classname="org.espressootr.unittest.cs.TestListCanister" name="test_toHashMap"/>
+  <testcase time="0.05" classname="org.espressootr.unittest.cs.TestListCanister" name="test_toJson"/>
 </testsuite>

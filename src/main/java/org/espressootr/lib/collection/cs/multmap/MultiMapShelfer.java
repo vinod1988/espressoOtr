@@ -37,9 +37,13 @@ public class MultiMapShelfer
         
         for (String beanKey : beans.keySet())
         {
+            
             currentFrontChar = beanKey.charAt(0);
             
-            if (i == 0) prevFrontChar = currentFrontChar;
+            if (i == 0)
+            {
+                prevFrontChar = currentFrontChar;
+            }
             
             if (prevFrontChar == currentFrontChar)
             {
@@ -49,6 +53,7 @@ public class MultiMapShelfer
             {
                 if (tmpMap.size() != 0)
                 {
+                    
                     shelf.add(new MultiMapCanister(String.valueOf(prevFrontChar), tmpMap));
                     
                     tmpMap.clear();
@@ -59,8 +64,9 @@ public class MultiMapShelfer
             prevFrontChar = currentFrontChar;
             i++;
         }
-        
-        this.qsort(this.shelf);
+         
+        shelf.add(new MultiMapCanister(String.valueOf(prevFrontChar), tmpMap));
+        this.reArrange();
         
     }
     
@@ -101,8 +107,8 @@ public class MultiMapShelfer
                 if (index >= 0)
                 {
                     for (String beanKey : multiMapCanister.getBeans().keySet())
-                    { 
-                        this.shelf.get(index).add(beanKey, multiMapCanister.getBeans().get(beanKey)); 
+                    {
+                        this.shelf.get(index).add(beanKey, multiMapCanister.getBeans().get(beanKey));
                     }
                 }
                 else
@@ -136,7 +142,7 @@ public class MultiMapShelfer
             shelf.add(new MultiMapCanister(tag, beanKey, beanValue));
         }
         
-        this.qsort(this.shelf);
+        this.reArrange();
     }
     
     public void remove(int index)

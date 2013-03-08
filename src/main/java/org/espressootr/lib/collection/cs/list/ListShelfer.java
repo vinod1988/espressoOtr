@@ -57,7 +57,10 @@ public class ListShelfer
             prevFrontChar = currentFrontChar;
         }
         
-        this.qsort(this.shelf);
+
+        shelf.add(new ListCanister(String.valueOf(prevFrontChar), tmpList));
+        
+        this.reArrange();
         
     }
     
@@ -108,7 +111,7 @@ public class ListShelfer
             shelf.add(new ListCanister(tag, bean));
         }
         
-        this.qsort(this.shelf);
+        this.reArrange();
         
     }
     

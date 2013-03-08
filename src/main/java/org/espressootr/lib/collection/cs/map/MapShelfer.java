@@ -57,10 +57,13 @@ public class MapShelfer
             prevFrontChar = currentFrontChar;
             i++;
         }
+        shelf.add(new MapCanister(String.valueOf(prevFrontChar), tmpMap));
         
-        this.qsort(this.shelf);
+        this.reArrange();
         
     }
+    
+    
     
     public List<String> getTags()
     {
@@ -110,7 +113,7 @@ public class MapShelfer
             shelf.add(new MapCanister(tag, beanKey, beanValue));
         }
         
-        this.qsort(this.shelf);
+        this.reArrange();
     }
     
     public void remove(int index)
