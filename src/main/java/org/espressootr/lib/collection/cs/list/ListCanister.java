@@ -21,13 +21,14 @@ public class ListCanister
     @SuppressWarnings("unused")
     private ListCanister()
     {
-        searcher = new ExtendedInclusiveBiSearch();
- 
-        
+        searcher = new ExtendedInclusiveBiSearch(); 
     }
      
     public ListCanister(String tag, String bean)
     {
+        if(searcher == null)
+            searcher = new ExtendedInclusiveBiSearch(); 
+        
         this.tag = tag;
         this.beans = new ArrayList<String>();
         this.beans.add(bean);
@@ -35,12 +36,18 @@ public class ListCanister
     
     public ListCanister(String tag, List<String> beans)
     {
+        if(searcher == null)
+            searcher = new ExtendedInclusiveBiSearch();
+        
         this.tag = tag;
         this.beans = new ArrayList<String>(beans);
     }
     
     public ListCanister(String tag, List<String> beans, boolean isSorted)
     {
+        if(searcher == null)
+            searcher = new ExtendedInclusiveBiSearch();
+        
         this.tag = tag;
         this.beans = new ArrayList<String>(beans);
         
