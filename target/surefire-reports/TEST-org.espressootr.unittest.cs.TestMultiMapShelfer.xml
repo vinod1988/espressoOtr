@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.03" errors="0" skipped="0" tests="13" name="org.espressootr.unittest.cs.TestMultiMapShelfer">
+<testsuite failures="3" time="0.022" errors="0" skipped="0" tests="13" name="org.espressootr.unittest.cs.TestMultiMapShelfer">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files (x86)\Java\jdk1.6.0_38\jre\bin"/>
@@ -25,7 +25,7 @@
     <property name="java.vm.specification.vendor" value="Sun Microsystems Inc."/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 7"/>
-    <property name="classworlds.conf" value="C:\Users\AhnSeongHyun\workspace\.metadata\.plugins\org.eclipse.m2e.core\launches\m2conf4089809016552238354.tmp"/>
+    <property name="classworlds.conf" value="C:\Users\AhnSeongHyun\workspace\.metadata\.plugins\org.eclipse.m2e.core\launches\m2conf584285724573123875.tmp"/>
     <property name="sun.jnu.encoding" value="MS949"/>
     <property name="java.library.path" value="C:\Program Files (x86)\Java\jdk1.6.0_38\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files (x86)/Java/jre6/bin/client;C:/Program Files (x86)/Java/jre6/bin;C:/Program Files (x86)/Java/jre6/lib/i386;C:\Program Files (x86)\Common Files\NetSarang;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\ ;C:\Program Files (x86)\Java\jdk1.6.0_38\bin;;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;D:\download\Utils\;C:\Program Files\TortoiseSVN\bin;D:\download\eclipse-jee-juno-SR1-win32\eclipse;;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -60,16 +60,118 @@
     <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
   </properties>
   <testcase time="0.003" classname="org.espressootr.unittest.cs.TestMultiMapShelfer" name="testBasicCategorizing"/>
-  <testcase time="0.002" classname="org.espressootr.unittest.cs.TestMultiMapShelfer" name="testSearch"/>
+  <testcase time="0.001" classname="org.espressootr.unittest.cs.TestMultiMapShelfer" name="testSearch"/>
   <testcase time="0.001" classname="org.espressootr.unittest.cs.TestMultiMapShelfer" name="testGetTags"/>
-  <testcase time="0.002" classname="org.espressootr.unittest.cs.TestMultiMapShelfer" name="testSize"/>
-  <testcase time="0.002" classname="org.espressootr.unittest.cs.TestMultiMapShelfer" name="testClear"/>
-  <testcase time="0.002" classname="org.espressootr.unittest.cs.TestMultiMapShelfer" name="testAddMultiMapCanister"/>
+  <testcase time="0.001" classname="org.espressootr.unittest.cs.TestMultiMapShelfer" name="testSize"/>
+  <testcase time="0.001" classname="org.espressootr.unittest.cs.TestMultiMapShelfer" name="testClear"/>
+  <testcase time="0.001" classname="org.espressootr.unittest.cs.TestMultiMapShelfer" name="testAddMultiMapCanister">
+    <failure message="expected:&lt;3&gt; but was:&lt;2&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;3&gt; but was:&lt;2&gt;
+	at org.junit.Assert.fail(Assert.java:58)
+	at org.junit.Assert.failNotEquals(Assert.java:259)
+	at org.junit.Assert.assertEquals(Assert.java:80)
+	at org.junit.Assert.assertEquals(Assert.java:88)
+	at org.espressootr.unittest.cs.TestMultiMapShelfer.testAddMultiMapCanister(TestMultiMapShelfer.java:86)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.junit.internal.runners.TestMethodRunner.executeMethodBody(TestMethodRunner.java:99)
+	at org.junit.internal.runners.TestMethodRunner.runUnprotected(TestMethodRunner.java:81)
+	at org.junit.internal.runners.BeforeAndAfterRunner.runProtected(BeforeAndAfterRunner.java:34)
+	at org.junit.internal.runners.TestMethodRunner.runMethod(TestMethodRunner.java:75)
+	at org.junit.internal.runners.TestMethodRunner.run(TestMethodRunner.java:45)
+	at org.junit.internal.runners.TestClassMethodsRunner.invokeTestMethod(TestClassMethodsRunner.java:71)
+	at org.junit.internal.runners.TestClassMethodsRunner.run(TestClassMethodsRunner.java:35)
+	at org.junit.internal.runners.TestClassRunner$1.runUnprotected(TestClassRunner.java:42)
+	at org.junit.internal.runners.BeforeAndAfterRunner.runProtected(BeforeAndAfterRunner.java:34)
+	at org.junit.internal.runners.TestClassRunner.run(TestClassRunner.java:52)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+</failure>
+  </testcase>
   <testcase time="0.001" classname="org.espressootr.unittest.cs.TestMultiMapShelfer" name="testRemove"/>
-  <testcase time="0.002" classname="org.espressootr.unittest.cs.TestMultiMapShelfer" name="testRemoveTag"/>
-  <testcase time="0.001" classname="org.espressootr.unittest.cs.TestMultiMapShelfer" name="testGetShelf"/>
-  <testcase time="0.004" classname="org.espressootr.unittest.cs.TestMultiMapShelfer" name="testGet"/>
+  <testcase time="0.001" classname="org.espressootr.unittest.cs.TestMultiMapShelfer" name="testRemoveTag"/>
+  <testcase time="0.002" classname="org.espressootr.unittest.cs.TestMultiMapShelfer" name="testGetShelf"/>
+  <testcase time="0" classname="org.espressootr.unittest.cs.TestMultiMapShelfer" name="testGet"/>
   <testcase time="0.001" classname="org.espressootr.unittest.cs.TestMultiMapShelfer" name="testToHashMap"/>
-  <testcase time="0.002" classname="org.espressootr.unittest.cs.TestMultiMapShelfer" name="testMultiMapShelferAllSameTagCase"/>
-  <testcase time="0.002" classname="org.espressootr.unittest.cs.TestMultiMapShelfer" name="testMultiMapShelferAllDiffTagCase"/>
+  <testcase time="0.003" classname="org.espressootr.unittest.cs.TestMultiMapShelfer" name="testMultiMapShelferAllSameTagCase">
+    <failure message="expected:&lt;0&gt; but was:&lt;1&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;0&gt; but was:&lt;1&gt;
+	at org.junit.Assert.fail(Assert.java:58)
+	at org.junit.Assert.failNotEquals(Assert.java:259)
+	at org.junit.Assert.assertEquals(Assert.java:80)
+	at org.junit.Assert.assertEquals(Assert.java:88)
+	at org.espressootr.unittest.cs.TestMultiMapShelfer.testMultiMapShelferAllSameTagCase(TestMultiMapShelfer.java:162)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.junit.internal.runners.TestMethodRunner.executeMethodBody(TestMethodRunner.java:99)
+	at org.junit.internal.runners.TestMethodRunner.runUnprotected(TestMethodRunner.java:81)
+	at org.junit.internal.runners.BeforeAndAfterRunner.runProtected(BeforeAndAfterRunner.java:34)
+	at org.junit.internal.runners.TestMethodRunner.runMethod(TestMethodRunner.java:75)
+	at org.junit.internal.runners.TestMethodRunner.run(TestMethodRunner.java:45)
+	at org.junit.internal.runners.TestClassMethodsRunner.invokeTestMethod(TestClassMethodsRunner.java:71)
+	at org.junit.internal.runners.TestClassMethodsRunner.run(TestClassMethodsRunner.java:35)
+	at org.junit.internal.runners.TestClassRunner$1.runUnprotected(TestClassRunner.java:42)
+	at org.junit.internal.runners.BeforeAndAfterRunner.runProtected(BeforeAndAfterRunner.java:34)
+	at org.junit.internal.runners.TestClassRunner.run(TestClassRunner.java:52)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+</failure>
+  </testcase>
+  <testcase time="0.001" classname="org.espressootr.unittest.cs.TestMultiMapShelfer" name="testMultiMapShelferAllDiffTagCase">
+    <failure message="expected:&lt;1&gt; but was:&lt;2&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;1&gt; but was:&lt;2&gt;
+	at org.junit.Assert.fail(Assert.java:58)
+	at org.junit.Assert.failNotEquals(Assert.java:259)
+	at org.junit.Assert.assertEquals(Assert.java:80)
+	at org.junit.Assert.assertEquals(Assert.java:88)
+	at org.espressootr.unittest.cs.TestMultiMapShelfer.testMultiMapShelferAllDiffTagCase(TestMultiMapShelfer.java:197)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.junit.internal.runners.TestMethodRunner.executeMethodBody(TestMethodRunner.java:99)
+	at org.junit.internal.runners.TestMethodRunner.runUnprotected(TestMethodRunner.java:81)
+	at org.junit.internal.runners.BeforeAndAfterRunner.runProtected(BeforeAndAfterRunner.java:34)
+	at org.junit.internal.runners.TestMethodRunner.runMethod(TestMethodRunner.java:75)
+	at org.junit.internal.runners.TestMethodRunner.run(TestMethodRunner.java:45)
+	at org.junit.internal.runners.TestClassMethodsRunner.invokeTestMethod(TestClassMethodsRunner.java:71)
+	at org.junit.internal.runners.TestClassMethodsRunner.run(TestClassMethodsRunner.java:35)
+	at org.junit.internal.runners.TestClassRunner$1.runUnprotected(TestClassRunner.java:42)
+	at org.junit.internal.runners.BeforeAndAfterRunner.runProtected(BeforeAndAfterRunner.java:34)
+	at org.junit.internal.runners.TestClassRunner.run(TestClassRunner.java:52)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+</failure>
+  </testcase>
 </testsuite>

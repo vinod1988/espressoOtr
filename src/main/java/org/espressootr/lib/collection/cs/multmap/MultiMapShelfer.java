@@ -102,6 +102,8 @@ public class MultiMapShelfer
             
             if (this.containTag(multiMapCanister.getTag()))
             {
+                System.out.println("contain");
+                
                 int index = this.getMapCanisterIndex(multiMapCanister.getTag());
                 
                 if (index >= 0)
@@ -118,6 +120,8 @@ public class MultiMapShelfer
             }
             else
             {
+                System.out.println("not contain");
+                
                 this.shelf.add(multiMapCanister);
             }
             
@@ -165,6 +169,7 @@ public class MultiMapShelfer
     {
         boolean isContained = true;
         int index = this.getMapCanisterIndex(tag);
+         
         
         if (index < 0)
         {

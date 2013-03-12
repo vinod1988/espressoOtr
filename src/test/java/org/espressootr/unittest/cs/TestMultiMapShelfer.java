@@ -79,9 +79,15 @@ public class TestMultiMapShelfer
         mmShelfer.add(mmCanIu);
         assertEquals(mmShelfer.size(), 2);
         
+        System.out.println(mmShelfer.toString());
+        
+        
         // duplication canister => shelf.size()+1;
         MultiMapCanister mmCanAs = new MultiMapCanister("a", "au", "chirstmas");
         mmShelfer.add(mmCanAs);
+        
+        System.out.println(mmShelfer.toString());
+        
         
         assertEquals(mmShelfer.size(), 2);
     }
