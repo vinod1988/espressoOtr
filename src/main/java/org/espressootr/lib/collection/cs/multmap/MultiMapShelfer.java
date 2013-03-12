@@ -202,9 +202,10 @@ public class MultiMapShelfer
         return MapCanister;
     }
     
-    public Object search(String searchKeyword)
+    @SuppressWarnings("rawtypes")
+    public List search(String searchKeyword)
     {
-        Object searchResult = new Object();
+        List searchResult = new ArrayList();
         
         MultiMapCanister searchedMultiMapCanister = this.get(searchKeyword);
         

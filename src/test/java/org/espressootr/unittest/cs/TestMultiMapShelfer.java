@@ -35,12 +35,12 @@ public class TestMultiMapShelfer
         assertEquals(mmShelfer.get("a").getBeans().size(), 3);
         assertEquals(mmShelfer.get("a").getBeans().get("ash84").size(), 3);
     }
-    
+     
     @SuppressWarnings("rawtypes")
     @Test
     public void testSearch()
     {
-        List mmSearchedValue = (List) mmShelfer.search("ash84");
+        List mmSearchedValue =  mmShelfer.search("ash84");
         
         assertEquals(mmSearchedValue.size(), 3);
         
