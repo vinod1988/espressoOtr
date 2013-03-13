@@ -1,6 +1,6 @@
 package org.espressootr.lib.utils;
 
-public class CapacityUtils
+public class CapacityUtil
 {
     
     /***
