@@ -13,7 +13,7 @@ import org.junit.Test;
 public class TestHtmlExtractor
 {
     
-    String target = "<span style='line-height:2;'><b>안녕하세요</b></span>";
+    String target = "<span style='line-height:2;'><b>Hello World.</b></span>";
     
     String targetUrl = "http://ash84.tistory.com/notice/848";
     
@@ -27,7 +27,7 @@ public class TestHtmlExtractor
     public void testGetTagFromHTMLString()
     {
         List<String> tags = HtmlExtractor.getTagFromHtmlString(target);
-        
+        System.out.println(tags);
         assertEquals(2, tags.size());
     }
     
@@ -36,7 +36,7 @@ public class TestHtmlExtractor
     {
         String str = HtmlExtractor.getStringFromHtmlString(target);
         
-        assertEquals(str, "안녕하세요");
+        assertEquals(str, "Hello World.");
     }
     
     @Test

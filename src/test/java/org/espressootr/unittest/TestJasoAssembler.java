@@ -16,7 +16,7 @@ public class TestJasoAssembler
     public void setUp() throws Exception
     {
         jasoAssem = new JasoAssembler();
-    }
+    } 
     
     @Test
     public void test()
