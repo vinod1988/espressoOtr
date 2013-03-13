@@ -119,9 +119,7 @@ public class MultiMapShelfer
                 }
             }
             else
-            {
-                System.out.println("not contain");
-                
+            { 
                 this.shelf.add(multiMapCanister);
             }
             
@@ -205,13 +203,18 @@ public class MultiMapShelfer
     @SuppressWarnings("rawtypes")
     public List search(String searchKeyword)
     {
-        List searchResult = new ArrayList();
+        List searchResult = null; 
         
         MultiMapCanister searchedMultiMapCanister = this.get(searchKeyword);
         
         if (searchedMultiMapCanister != null)
         {
             searchResult = searchedMultiMapCanister.search(searchKeyword);
+        }
+        
+        if(searchResult==null)
+        {
+            searchResult = new ArrayList();
         }
         
         return searchResult;

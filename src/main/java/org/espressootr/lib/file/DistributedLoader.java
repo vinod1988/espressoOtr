@@ -19,13 +19,14 @@ public class DistributedLoader
         
         for (String filePath : filePathList)
         {
-            loadThResultList.add(concurrentService.submit(new LoadCallableThread(filePath))); 
+            loadThResultList.add(concurrentService.submit(new LoadCallableThread(filePath)));
         }
         
         for (Future<StringLoadResult> loadResultFuture : loadThResultList)
         {
             filePathContents.put(loadResultFuture.get().getLoadedFilePath(), loadResultFuture.get().getLoadedList());
         }
+        
         
         concurrentService.shutdown();
         

@@ -90,6 +90,7 @@ public class MultiMapCanister
     }
     
     
+    @SuppressWarnings("rawtypes")
     public List search(String searchKeyword)
     {
         return this.beans.get(searchKeyword);
