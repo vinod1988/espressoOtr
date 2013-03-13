@@ -19,7 +19,7 @@ Simple [HTMLExtractor](http://ash84.tistory.com/943). <br/>
 
 
 ## Wiki
-- Wiki and Usags are [it[(https://github.com/AhnSeongHyun/espressoOtr/wiki).  
+- Wiki and Usags are [it](https://github.com/AhnSeongHyun/espressoOtr/wiki).  
 
 ##Environments
 
