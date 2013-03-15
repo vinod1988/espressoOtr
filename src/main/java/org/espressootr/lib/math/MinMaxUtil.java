@@ -2,7 +2,7 @@ package org.espressootr.lib.math;
 
 import java.util.List;
 
-public final class Math {
+public final class MinMaxUtil {
 
     public static int getMaxValue(int[] source) {
 	int maxValue = Integer.MIN_VALUE;
