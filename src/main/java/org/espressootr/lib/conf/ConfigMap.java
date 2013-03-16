@@ -2,6 +2,7 @@ package org.espressootr.lib.conf;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
 public class ConfigMap
 {
@@ -77,4 +78,14 @@ public class ConfigMap
     {
         return this.confKV.toString();
     }
+    
+
+    public void setToJvmProperties() 
+    { 
+        for (Entry<String, Object> obj : this.confKV.entrySet()) 
+        { 
+            System.setProperty(obj.getKey(), String.valueOf(obj.getValue())); 
+        }  
+    }
+ 
 }
