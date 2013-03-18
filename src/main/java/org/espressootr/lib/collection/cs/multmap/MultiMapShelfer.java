@@ -6,9 +6,10 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+ 
+import org.espressootr.lib.utils.InitUtil; 
 
-import org.espressootr.lib.json.JsonBodum;
-import org.espressootr.lib.utils.InitUtil;
+import com.google.gson.Gson;
 
 public class MultiMapShelfer
 {
@@ -280,7 +281,13 @@ public class MultiMapShelfer
     
     public String toJson()
     {
-        return JsonBodum.toJson(this.shelf);
+        
+        Gson gson = new Gson();
+        
+        gson.toJson(this.shelf);
+        
+               
+        return  gson.toJson(this.shelf);
     }
     
     @Override

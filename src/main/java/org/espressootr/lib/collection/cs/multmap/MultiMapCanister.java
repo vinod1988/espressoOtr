@@ -4,9 +4,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import org.espressootr.lib.json.JsonBodum;
+ 
 import org.espressootr.lib.utils.InitUtil;
+
+import com.google.gson.Gson;
 
 public class MultiMapCanister
 {
@@ -54,7 +55,8 @@ public class MultiMapCanister
     
     public String toJson()
     {
-        return JsonBodum.toJson(this);
+        Gson gson = new Gson();
+        return  gson.toJson(this);
     }
     
     @SuppressWarnings({ "rawtypes", "unchecked" })
