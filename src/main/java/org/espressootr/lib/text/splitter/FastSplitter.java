@@ -19,7 +19,7 @@ public class FastSplitter
 
     }
 
-    public FastSplitter(char separator)
+    public FastSplitter(final char separator)
     {
 	this.separator = separator;
     }
@@ -29,23 +29,23 @@ public class FastSplitter
 	return separator;
     }
 
-    public void setSeparator(char separator)
+    public void setSeparator(final char separator)
     {
 	this.separator = separator;
     }
 
-    public void setTrim(boolean isTrim)
+    public void setTrim(final boolean isTrim)
     {
 	this.isTrim = isTrim;
 
     }
 
-    public String[] splitToArray(String target)
+    public String[] splitToArray(final String target)
     {
 	return CollectionConverter.stringList2Array(splitToList(target));
     }
 
-    public List<String> splitToList(String target)
+    public List<String> splitToList(final String target)
     {
 	List<String> splittedResult = new ArrayList<String>();
 

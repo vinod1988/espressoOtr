@@ -14,7 +14,7 @@ public class LoadCallableThread implements Callable<StringLoadResult>
         
     }
     
-    public LoadCallableThread(String filePath)
+    public LoadCallableThread(final String filePath)
     {
         this.filePath = filePath;
     }

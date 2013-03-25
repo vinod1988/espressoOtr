@@ -17,7 +17,7 @@ public class CustomFileFilter implements FilenameFilter
 	throw new AssertionError();
     }
 
-    public CustomFileFilter(TargetType targetType, String target)
+    public CustomFileFilter(final TargetType targetType, final String target)
     {
 	this.targetType = targetType;
 	this.target = target;
@@ -29,7 +29,7 @@ public class CustomFileFilter implements FilenameFilter
 	return isAccept(fileName);
     }
 
-    private boolean isAccept(String fileName)
+    private boolean isAccept(final String fileName)
     {
 	boolean accepted = false;
 	if (this.targetType == TargetType.STARTS_WITH)

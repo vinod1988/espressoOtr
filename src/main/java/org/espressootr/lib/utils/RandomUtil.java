@@ -5,7 +5,7 @@ import java.util.Random;
 public final class RandomUtil
 {
     
-    public static int getRandomNumber(int from, int to)
+    public static int getRandomNumber(final int from, final int to)
     {
         Random intRandom = new Random();
         

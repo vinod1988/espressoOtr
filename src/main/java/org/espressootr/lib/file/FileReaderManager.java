@@ -19,7 +19,7 @@ public class FileReaderManager
     }
     
   
-    public static List<String> readLineFromFile(String filePath) throws IOException
+    public static List<String> readLineFromFile(final String filePath) throws IOException
     {
         List<String> lineList = new ArrayList<String>();
         

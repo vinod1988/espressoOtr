@@ -19,22 +19,22 @@ public class Searcher
         
     }
     
-    public static List<Integer> search(List<String> targetCollection, String searchKeyword)
+    public static List<Integer> search(final List<String> targetCollection, final String searchKeyword)
     {
         return biSearch.search(targetCollection, searchKeyword);
     }
     
-    public static List<Integer> extendedSearch(List<String> targetCollection, String searchKeyword)
+    public static List<Integer> extendedSearch(final List<String> targetCollection, final String searchKeyword)
     {
         return extBiSearch.search(targetCollection, searchKeyword);
     }
     
-    public static List<Integer> incSearch(List<String> targetCollection, String searchKeyword)
+    public static List<Integer> incSearch(final List<String> targetCollection, final String searchKeyword)
     {
         return incBiSearch.search(targetCollection, searchKeyword);
     }
     
-    public static List<Integer> extIncSearch(List<String> targetCollection, String searchKeyword)
+    public static List<Integer> extIncSearch(final List<String> targetCollection, final String searchKeyword)
     {
         return extIncBiSearch.search(targetCollection, searchKeyword);
     }

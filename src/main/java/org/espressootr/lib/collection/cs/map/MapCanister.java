@@ -20,14 +20,14 @@ public class MapCanister
         
     }
     
-    public MapCanister(String tag, String beanKey, Object beanValue)
+    public MapCanister(final String tag, final String beanKey, final Object beanValue)
     {
         this.tag = tag;
         this.beans = new HashMap<String, Object>();
         this.beans.put(beanKey, beanValue);
     }
     
-    public MapCanister(String tag, Map<String, Object> beans)
+    public MapCanister(final String tag, final Map<String, Object> beans)
     {
         this.tag = tag;
         this.beans = new HashMap<String, Object>(beans);
@@ -49,12 +49,12 @@ public class MapCanister
         return JsonBodum.toJson(this);
     }
     
-    void add(String beanKey, Object beanValue)
+    void add(final String beanKey, final Object beanValue)
     {
         this.beans.put(beanKey, beanValue);
     }
     
-    public Object search(String searchKeyword)
+    public Object search(final String searchKeyword)
     {
         return this.beans.get(searchKeyword);
         

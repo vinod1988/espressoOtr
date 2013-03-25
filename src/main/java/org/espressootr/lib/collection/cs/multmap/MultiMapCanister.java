@@ -24,7 +24,7 @@ public class MultiMapCanister
     }
     
     @SuppressWarnings({ "rawtypes", "unchecked" })
-    public MultiMapCanister(String tag, String beanKey, Object beanValue)
+    public MultiMapCanister(final String tag, final String beanKey,final  Object beanValue)
     {
         this.tag = tag;
         this.beans = new HashMap<String, List>();
@@ -34,7 +34,7 @@ public class MultiMapCanister
     }
     
     @SuppressWarnings("rawtypes")
-    public MultiMapCanister(String tag, Map<String, List> beans)
+    public MultiMapCanister(final String tag, final Map<String, List> beans)
     {
         this.tag = tag;
         this.beans = new HashMap<String, List>(beans);
@@ -60,7 +60,7 @@ public class MultiMapCanister
     }
     
     @SuppressWarnings({ "rawtypes", "unchecked" })
-    void add(String beanKey, List beanValues)
+    void add(final String beanKey, final List beanValues)
     { 
         if(this.beans.containsKey(beanKey))
         {
@@ -75,7 +75,7 @@ public class MultiMapCanister
     }
     
     @SuppressWarnings({ "rawtypes", "unchecked" })
-    void add(String beanKey, Object beanValue)
+    void add(final String beanKey, final Object beanValue)
     { 
         if(this.beans.containsKey(beanKey))
         {
@@ -93,7 +93,7 @@ public class MultiMapCanister
     
     
     @SuppressWarnings("rawtypes")
-    public List search(String searchKeyword)
+    public List search(final String searchKeyword)
     {
         return this.beans.get(searchKeyword);
         

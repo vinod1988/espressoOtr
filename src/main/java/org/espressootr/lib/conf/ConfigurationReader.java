@@ -27,7 +27,7 @@ public class ConfigurationReader
     }
   
 
-    public void setConfigSplitter(String configSplitter)
+    public void setConfigSplitter(final String configSplitter)
     {
         this.configSplitter = configSplitter;
     }
@@ -48,7 +48,7 @@ public class ConfigurationReader
 
 
 
-    public ConfigMap loadConfiguration(String confFilePath) throws IOException
+    public ConfigMap loadConfiguration(final String confFilePath) throws IOException
     {
         
         ConfigMap confMap = new ConfigMap();
@@ -86,7 +86,7 @@ public class ConfigurationReader
         return confMap;
     }
     
-    private String[] extractKeyValue(String configItem)
+    private String[] extractKeyValue(final String configItem)
     {
         
         String[] keyValue = new String[2];
@@ -98,7 +98,7 @@ public class ConfigurationReader
         return keyValue;
     }
     
-    private boolean isVaildKeyValue(String configKey, String configValue)
+    private boolean isVaildKeyValue(final String configKey, final String configValue)
     {
         
         boolean isVaild = true;

@@ -6,7 +6,7 @@ public class Korean
     private static final int HANGUL_UNICODE_END = 0xD7AF;
  
     
-    public static boolean isHangul(char gram)
+    public static boolean isHangul(final char gram)
     {
 	boolean isHangulGram = false;
 

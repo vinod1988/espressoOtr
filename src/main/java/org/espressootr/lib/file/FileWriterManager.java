@@ -17,7 +17,7 @@ public class FileWriterManager
     }
     
      
-    public static void writeLineToFile(String filePath, String content, boolean append) throws IOException
+    public static void writeLineToFile(final String filePath, final String content,final boolean append) throws IOException
     { 
 	BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(filePath, append), Encoding.getJVMEncoding()));
 
@@ -28,7 +28,7 @@ public class FileWriterManager
 
     }
     
-    public static void writeToFile(String filePath, String content, boolean append) throws IOException
+    public static void writeToFile(final String filePath, final String content, final boolean append) throws IOException
     {
         BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(filePath, append), Encoding.getJVMEncoding()));
 

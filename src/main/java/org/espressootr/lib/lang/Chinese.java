@@ -3,7 +3,7 @@ package org.espressootr.lib.lang;
 public class Chinese
 { 
 
-    public static boolean isChinese(char gram)
+    public static boolean isChinese(final char gram)
     {
 
 	boolean isChineseGram = false;

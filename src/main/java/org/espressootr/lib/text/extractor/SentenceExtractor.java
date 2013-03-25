@@ -17,7 +17,7 @@ public class SentenceExtractor
         return extractSentences(document).size();
     }
     
-    public List<String> extractSentences(String document)
+    public List<String> extractSentences(final String document)
     {
         List<String> sentences = new ArrayList<String>();
         
@@ -59,7 +59,7 @@ public class SentenceExtractor
         return sentences;
     }
     
-    private boolean checkRules(StringBuilder candidateSentence)
+    private boolean checkRules(final StringBuilder candidateSentence)
     {
         boolean justSentence = true;
         

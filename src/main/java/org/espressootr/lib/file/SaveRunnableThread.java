@@ -20,7 +20,7 @@ public class SaveRunnableThread implements Runnable
         throw new AssertionError();
     }
     
-    public SaveRunnableThread(List<String> willSaveList, String filePath)
+    public SaveRunnableThread(final List<String> willSaveList, final String filePath)
     {
         this.willSaveList = willSaveList;
         this.filePath = filePath;

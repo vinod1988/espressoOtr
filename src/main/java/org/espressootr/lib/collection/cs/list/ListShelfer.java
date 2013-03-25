@@ -18,7 +18,7 @@ public class ListShelfer
         shelf = new ArrayList<ListCanister>();
     }
     
-    public ListShelfer(List<String> beans)
+    public ListShelfer(final List<String> beans)
     {
         int i = 0;
         int elementSize = beans.size();
@@ -89,14 +89,14 @@ public class ListShelfer
         shelf.clear();
     }
     
-    public void add(ListCanister ListCanister)
+    public void add(final ListCanister ListCanister)
     {
         if (this.shelf != null) this.shelf.add(ListCanister);
         
         this.reArrange();
     }
     
-    public void add(String bean)
+    public void add(final String bean)
     {
         String tag = String.valueOf(bean.charAt(0));
         
@@ -115,7 +115,7 @@ public class ListShelfer
         
     }
     
-    public void remove(int index)
+    public void remove(final int index)
     {
         if (this.shelf.size() != 0)
         {
@@ -123,7 +123,7 @@ public class ListShelfer
         }
     }
     
-    public void remove(String tag)
+    public void remove(final String tag)
     {
         int index = getListCanisterIndex(tag);
         
@@ -131,7 +131,7 @@ public class ListShelfer
         
     }
     
-    private boolean containTag(String tag)
+    private boolean containTag(final String tag)
     {
         boolean isContained = true;
         int index = this.getListCanisterIndex(tag);
@@ -154,7 +154,7 @@ public class ListShelfer
         
     }
     
-    public ListCanister get(String searchKeyword)
+    public ListCanister get(final String searchKeyword)
     {
         ListCanister ListCanister = null;
         
@@ -168,7 +168,7 @@ public class ListShelfer
         return ListCanister;
     }
     
-    public List<String> search(String searchKeyword)
+    public List<String> search(final String searchKeyword)
     {
         List<String> searchResult = Collections.emptyList();
         ListCanister searchedListCanister = this.get(searchKeyword);
@@ -200,7 +200,7 @@ public class ListShelfer
         
     }
     
-    private int getListCanisterIndex(String searchTag)
+    private int getListCanisterIndex(final String searchTag)
     {
         int ListCanisterIndex = -1;
         int start, end, midPt;

@@ -9,7 +9,7 @@ public class English
     private static final char LOWERCASE_Z = 'z';
 
     
-    public static boolean isEnglish(char gram)
+    public static boolean isEnglish(final char gram)
     {
 
 	boolean isAlpabetGram = false;

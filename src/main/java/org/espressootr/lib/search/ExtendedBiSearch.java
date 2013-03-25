@@ -7,12 +7,12 @@ public class ExtendedBiSearch implements BeanSearch
 { 
     
     @Override
-    public List<Integer> search(List<String> targetCollection, String searchKeyword)
+    public List<Integer> search(final List<String> targetCollection, final String searchKeyword)
     {
         return biExtendedSearch(targetCollection, searchKeyword);
     }
     
-    private static List<Integer> biExtendedSearch(List<String> searchTarget, String searchKeyword)
+    private static List<Integer> biExtendedSearch(final List<String> searchTarget, final String searchKeyword)
     {
 
         List<Integer> searchIndex = new ArrayList<Integer>();

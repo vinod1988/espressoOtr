@@ -18,14 +18,14 @@ public class ClassComparator implements Comparator
         throw new AssertionError();
     }
     
-    public ClassComparator(String field, boolean ascending)
+    public ClassComparator(final String field, final boolean ascending)
     {
         this.sortingField = field;
         this.ascending = ascending; 
     }
     
     @Override
-    public int compare(Object o1, Object o2)
+    public int compare(final Object o1,final Object o2)
     {
         int result = 0;
         
@@ -82,7 +82,7 @@ public class ClassComparator implements Comparator
         
     }
     
-    private int compareIntAsc(Object o1, Object o2)
+    private int compareIntAsc(final Object o1, final Object o2)
     {
         int result = 0;
         
@@ -113,7 +113,7 @@ public class ClassComparator implements Comparator
         return result;
     }
     
-    private int compareIntDesc(Object o1, Object o2)
+    private int compareIntDesc(final Object o1, final Object o2)
     {
         int result = 0;
         
@@ -144,7 +144,7 @@ public class ClassComparator implements Comparator
         return result;
     }
     
-    private int compareStringAsc(Object o1, Object o2)
+    private int compareStringAsc(final Object o1, final Object o2)
     {
         int result = 0;
         
@@ -165,7 +165,7 @@ public class ClassComparator implements Comparator
         return result;
     }
     
-    private int compareStringDesc(Object o1, Object o2)
+    private int compareStringDesc(final Object o1, final Object o2)
     {
         int result = 0;
         
@@ -186,7 +186,7 @@ public class ClassComparator implements Comparator
         return result;
     }
     
-    private int compareDateAsc(Object o1, Object o2)
+    private int compareDateAsc(final Object o1, final Object o2)
     {
         int result = 0;
         
@@ -207,7 +207,7 @@ public class ClassComparator implements Comparator
         return result;
     }
     
-    private int compareDateDesc(Object o1, Object o2)
+    private int compareDateDesc(final Object o1, final Object o2)
     {
         int result = 0;
         

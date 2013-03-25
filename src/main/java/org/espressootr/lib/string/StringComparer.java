@@ -2,7 +2,7 @@ package org.espressootr.lib.string;
 
 public class StringComparer
 {
-    public static boolean compareTo(int size, String target, String compare)
+    public static boolean compareTo(final int size, final String target, final String compare)
     {
 
         boolean result = true;

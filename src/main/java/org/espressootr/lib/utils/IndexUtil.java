@@ -3,7 +3,7 @@ package org.espressootr.lib.utils;
 public class IndexUtil
 {
     
-    public static int[] createIntIndex(int size)
+    public static int[] createIntIndex(final int size)
     {
         int[] index = new int[size];
         
@@ -13,7 +13,7 @@ public class IndexUtil
         return index;
     }
     
-    public static int[] createIntIndex(int size, int initValue)
+    public static int[] createIntIndex(final int size, final int initValue)
     {
         int[] index = new int[size];
         
@@ -23,7 +23,7 @@ public class IndexUtil
         return index;
     }
     
-    public static String[] createStringIndex(int size)
+    public static String[] createStringIndex(final int size)
     {
         String[] index = new String[size];
         
@@ -34,7 +34,7 @@ public class IndexUtil
         
     }
     
-    public static String[] createStringIndex(int size, String initValue)
+    public static String[] createStringIndex(final int size, final String initValue)
     {
         String[] index = new String[size];
         

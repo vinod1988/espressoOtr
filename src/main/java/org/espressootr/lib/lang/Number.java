@@ -7,7 +7,7 @@ public class Number
     
     static final int numCount = 10;
     
-    public static boolean isNumber(char gram)
+    public static boolean isNumber(final char gram)
     {
         
         boolean isNumberGram = false;

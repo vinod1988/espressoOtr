@@ -9,7 +9,7 @@ public class CapacityUtil
      * @param expectedCount
      * @return
      */
-    public static int adjustInitialCapacity(int expectedCount)
+    public static int adjustInitialCapacity(final int expectedCount)
     {
         int initCapacity = (expectedCount * 100) / 75;
         

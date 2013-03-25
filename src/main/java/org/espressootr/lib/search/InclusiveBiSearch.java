@@ -9,13 +9,13 @@ public class InclusiveBiSearch implements BeanSearch
 {
 
     @Override
-    public List<Integer> search(List<String> targetCollection, String searchKeyword)
+    public List<Integer> search(final List<String> targetCollection,final  String searchKeyword)
     {
         return biSearchInclusiveRelation(targetCollection, searchKeyword);
         
     }
     
-    private static List<Integer> biSearchInclusiveRelation(List<String> searchTarget, String searchKeyword)
+    private static List<Integer> biSearchInclusiveRelation(final List<String> searchTarget, final String searchKeyword)
     {
 
         int searchIndex = -1;

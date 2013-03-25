@@ -7,13 +7,13 @@ public class BiSearch implements BeanSearch
 {
     
     @Override
-    public List<Integer> search(List<String> targetCollection, String searchKeyword)
+    public List<Integer> search(final List<String> targetCollection,final  String searchKeyword)
     {
         return biSearch(targetCollection, searchKeyword);
         
     }
     
-    private static List<Integer> biSearch(List<String> searchTarget, String searchKeyword)
+    private static List<Integer> biSearch(final List<String> searchTarget, final String searchKeyword)
     {
         
         int searchIndex = -1;

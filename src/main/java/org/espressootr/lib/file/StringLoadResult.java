@@ -13,7 +13,7 @@ public class StringLoadResult
         return loadedFilePath;
     }
     
-    public void setLoadedFilePath(String loadedFilePath)
+    public void setLoadedFilePath(final String loadedFilePath)
     {
         this.loadedFilePath = loadedFilePath;
     }
@@ -23,7 +23,7 @@ public class StringLoadResult
         return loadedList;
     }
     
-    public void setLoadedList(List<String> loadedList)
+    public void setLoadedList(final List<String> loadedList)
     {
         this.loadedList = loadedList;
     }

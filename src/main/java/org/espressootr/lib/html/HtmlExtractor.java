@@ -13,7 +13,7 @@ import net.htmlparser.jericho.Source;
 
 public class HtmlExtractor
 {
-    public static List<String> getTagFromHtmlString(String htmlString)
+    public static List<String> getTagFromHtmlString(final String htmlString)
     {
         List<String> tagList = new ArrayList<String>();
         
@@ -27,21 +27,21 @@ public class HtmlExtractor
         
     }
     
-    public static String getStringFromHtmlString(String htmlString)
+    public static String getStringFromHtmlString(final String htmlString)
     {
         Source source = new Source(htmlString);
         return source.getTextExtractor().toString();
         
     }
     
-    public static String getString(String url) throws MalformedURLException, IOException
+    public static String getString(final String url) throws MalformedURLException, IOException
     {
         Source source = new Source(new URL(url));
         return source.getTextExtractor().toString();
         
     }
     
-    public static List<String> getTag(String url) throws MalformedURLException, IOException
+    public static List<String> getTag(final String url) throws MalformedURLException, IOException
     {
         List<String> tagList = new ArrayList<String>();
         
@@ -54,7 +54,7 @@ public class HtmlExtractor
         return tagList;
     }
     
-    public static List<String> getLinkTagValue(String url) throws MalformedURLException, IOException
+    public static List<String> getLinkTagValue(final String url) throws MalformedURLException, IOException
     {
         List<String> hrefList = new ArrayList<String>();
         
@@ -73,7 +73,7 @@ public class HtmlExtractor
         
     }
     
-    public static List<String> getImgTagValue(String url) throws MalformedURLException, IOException
+    public static List<String> getImgTagValue(final String url) throws MalformedURLException, IOException
     {
         List<String> imgSrcList = new ArrayList<String>();
         
@@ -91,7 +91,7 @@ public class HtmlExtractor
         return imgSrcList;
     }
 
-    public static String getBodyString(String url) throws MalformedURLException, IOException
+    public static String getBodyString(final String url) throws MalformedURLException, IOException
     { 
         String bodyString = InitUtil.EMPTY_STRING;
         Source source = new Source(new URL(url));

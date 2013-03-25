@@ -9,7 +9,7 @@ public class TextRefiner
         this.refiningLevel = refiningLevel;
     }
     
-    public String refineText(String text) throws Exception
+    public String refineText(final String text) throws Exception
     {
         String refinedText = null;
         
@@ -35,7 +35,7 @@ public class TextRefiner
         return refinedText;
     }
     
-    private String refineTextHangulEnglishNumber(String text)
+    private String refineTextHangulEnglishNumber(final String text)
     {
         
         StringBuilder sb = new StringBuilder();
@@ -53,7 +53,7 @@ public class TextRefiner
         return sb.toString();
     }
     
-    private String refineTextHangulEnglish(String text)
+    private String refineTextHangulEnglish(final String text)
     {
         StringBuilder sb = new StringBuilder();
         
@@ -71,7 +71,7 @@ public class TextRefiner
         return sb.toString();
     }
     
-    private String refineTextHangulOnly(String text)
+    private String refineTextHangulOnly(final String text)
     {
         
         StringBuilder sb = new StringBuilder();

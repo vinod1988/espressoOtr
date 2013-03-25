@@ -6,7 +6,7 @@ import java.util.List;
 public class CollectionConverter
 {
     
-    public static List<Object> array2List(Object[] array)
+    public static List<Object> array2List(final Object[] array)
     {
         List<Object> convertedList = new ArrayList<Object>();
         for (Object obj : array)
@@ -16,7 +16,7 @@ public class CollectionConverter
         
     }
     
-    public static Object[] list2Array(List<Object> list)
+    public static Object[] list2Array(final List<Object> list)
     {
         int count = list.size();
         Object[] convertedArray = new Object[count];
@@ -27,7 +27,7 @@ public class CollectionConverter
         
     }
     
-    public static String[] stringList2Array(List<String> list)
+    public static String[] stringList2Array(final List<String> list)
     {
         int count = list.size();
         String[] convertedArray = new String[count];
@@ -37,7 +37,7 @@ public class CollectionConverter
         return convertedArray;
     }
     
-    public static List<String> stringArray2List(String[] array)
+    public static List<String> stringArray2List(final String[] array)
     {
         List<String> convertedList = new ArrayList<String>();
         for (String obj : array)
@@ -47,7 +47,7 @@ public class CollectionConverter
         
     }
     
-    public static int[] intList2Array(List<Integer> list)
+    public static int[] intList2Array(final List<Integer> list)
     {
         int count = list.size();
         int[] convertedArray = new int[count];
@@ -57,7 +57,7 @@ public class CollectionConverter
         return convertedArray;
     }
     
-    public static List<Integer> intArray2List(int[] array)
+    public static List<Integer> intArray2List(final int[] array)
     {
         List<Integer> convertedList = new ArrayList<Integer>();
         for (Integer obj : array)

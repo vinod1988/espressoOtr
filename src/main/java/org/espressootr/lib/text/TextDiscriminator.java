@@ -10,29 +10,29 @@ import org.espressootr.lib.utils.SplitterUtil;
 public final class TextDiscriminator
 {
     
-    public static boolean isHangul(char gram)
+    public static boolean isHangul(final char gram)
     {
         return Korean.isHangul(gram);
         
     }
     
-    public static boolean isNumber(char gram)
+    public static boolean isNumber(final char gram)
     {
         return Number.isNumber(gram);
         
     }
     
-    public static boolean isAlphabet(char gram)
+    public static boolean isAlphabet(final char gram)
     {
         return English.isEnglish(gram);
     }
     
-    public static boolean isChinese(char gram)
+    public static boolean isChinese(final char gram)
     {
         return Chinese.isChinese(gram);
     }
     
-    public static boolean isWhiteSpace(char gram)
+    public static boolean isWhiteSpace(final char gram)
     {
         boolean isWSGram = false;
         
@@ -63,7 +63,7 @@ public final class TextDiscriminator
         return text;
     }
     
-    public static String replaceSymbolToSpace(String text)
+    public static String replaceSymbolToSpace(final String text)
     {
         StringBuilder sb = new StringBuilder();
         

@@ -22,7 +22,7 @@ public class MultiMapShelfer
     }
     
     @SuppressWarnings("rawtypes")
-    public MultiMapShelfer(Map<String, List> beans)
+    public MultiMapShelfer(final Map<String, List> beans)
     {
         int i = 0;
         
@@ -96,7 +96,7 @@ public class MultiMapShelfer
         shelf.clear();
     }
     
-    public void add(MultiMapCanister multiMapCanister) throws Exception
+    public void add(final MultiMapCanister multiMapCanister) throws Exception
     {
         if (this.shelf != null)
         {
@@ -128,7 +128,7 @@ public class MultiMapShelfer
         this.reArrange();
     }
     
-    public void add(String beanKey, Object beanValue)
+    public void add(final String beanKey, final Object beanValue)
     {
         
         String tag = String.valueOf(beanKey.charAt(0));
@@ -147,7 +147,7 @@ public class MultiMapShelfer
         this.reArrange();
     }
     
-    public void remove(int index)
+    public void remove(final int index)
     {
         if (this.shelf.size() != 0)
         {
@@ -155,7 +155,7 @@ public class MultiMapShelfer
         }
     }
     
-    public void remove(String tag)
+    public void remove(final String tag)
     {
         int index = getMapCanisterIndex(tag);
         
@@ -163,7 +163,7 @@ public class MultiMapShelfer
         
     }
     
-    private boolean containTag(String tag)
+    private boolean containTag(final String tag)
     {
         boolean isContained = true;
         int index = this.getMapCanisterIndex(tag);
@@ -187,7 +187,7 @@ public class MultiMapShelfer
         
     }
     
-    public MultiMapCanister get(String searchKeyword)
+    public MultiMapCanister get(final String searchKeyword)
     {
         MultiMapCanister MapCanister = null;
         
@@ -201,7 +201,7 @@ public class MultiMapShelfer
     }
     
     @SuppressWarnings("rawtypes")
-    public List search(String searchKeyword)
+    public List search(final String searchKeyword)
     {
         List searchResult = null; 
         
@@ -225,7 +225,7 @@ public class MultiMapShelfer
         if (this.shelf != null) this.qsort(this.shelf);
     }
     
-    private void qsort(List<MultiMapCanister> sortingTarget)
+    private void qsort(final List<MultiMapCanister> sortingTarget)
     {
         Comparator<MultiMapCanister> comparator = new Comparator<MultiMapCanister>() {
             
@@ -239,7 +239,7 @@ public class MultiMapShelfer
         
     }
     
-    private int getMapCanisterIndex(String searchTag)
+    private int getMapCanisterIndex(final String searchTag)
     {
         int mapCanisterIndex = -1;
         int start, end, midPt;

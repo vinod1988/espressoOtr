@@ -31,7 +31,7 @@ public class TermExtractor
 	
     }
 
-    public int extractTermCount(String target)
+    public int extractTermCount(final String target)
     {
         return extractTermsToArray(target).length;
     }

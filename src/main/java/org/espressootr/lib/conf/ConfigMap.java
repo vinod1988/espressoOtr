@@ -14,12 +14,12 @@ public class ConfigMap
         confKV = new HashMap<String, Object>(); 
     }
     
-    public ConfigMap(Map<String, Object> confKV)
+    public ConfigMap(final Map<String, Object> confKV)
     {
         this.confKV = confKV;
     }
     
-    public void set(String key, Object value)
+    public void set(final String key, final Object value)
     {
         if (this.confKV != null)
         {
@@ -27,17 +27,17 @@ public class ConfigMap
         }
     }
     
-    public boolean exist(String key)
+    public boolean exist(final String key)
     {
         return confKV.containsKey(key);
     }
     
-    public void put(String key, Object value)
+    public void put(final String key, final Object value)
     {
         confKV.put(key, value);
     }
     
-    public String getStringValue(String key)
+    public String getStringValue(final String key)
     {
         String value = "";
         
@@ -53,17 +53,17 @@ public class ConfigMap
         return value;
     }
     
-    public String[] getStringArrayValue(String key)
+    public String[] getStringArrayValue(final String key)
     {
         return (String[]) confKV.get(key);
     }
     
-    public int[] getIntArrayValue(String key)
+    public int[] getIntArrayValue(final String key)
     {
         return (int[]) confKV.get(key);
     }
     
-    public int getIntValue(String key)
+    public int getIntValue(final String key)
     {
         return Integer.valueOf(confKV.get(key).toString());
     }

@@ -8,7 +8,7 @@ public class MapUtil
 {
     
     @SuppressWarnings({ "rawtypes", "unchecked" })
-    public static List getValueList(Map targetMap)
+    public static List getValueList(final Map targetMap)
     {
         List valueList = new ArrayList();
         

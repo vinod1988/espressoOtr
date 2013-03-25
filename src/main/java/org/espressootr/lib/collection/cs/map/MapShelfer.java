@@ -19,7 +19,7 @@ public class MapShelfer
         shelf = new ArrayList<MapCanister>();
     }
     
-    public MapShelfer(Map<String, Object> beans)
+    public MapShelfer(final Map<String, Object> beans)
     {
         int i = 0;
         
@@ -90,14 +90,14 @@ public class MapShelfer
         shelf.clear();
     }
     
-    public void add(MapCanister MapCanister)
+    public void add(final MapCanister MapCanister)
     {
         if (this.shelf != null) this.shelf.add(MapCanister);
         
         this.reArrange();
     }
     
-    public void add(String beanKey, Object beanValue)
+    public void add(final String beanKey, final Object beanValue)
     {
         
         String tag = String.valueOf(beanKey.charAt(0));
@@ -116,7 +116,7 @@ public class MapShelfer
         this.reArrange();
     }
     
-    public void remove(int index)
+    public void remove(final int index)
     {
         if (this.shelf.size() != 0)
         {
@@ -124,7 +124,7 @@ public class MapShelfer
         }
     }
     
-    public void remove(String tag)
+    public void remove(final String tag)
     {
         int index = getMapCanisterIndex(tag);
         
@@ -132,7 +132,7 @@ public class MapShelfer
         
     }
     
-    private boolean containTag(String tag)
+    private boolean containTag(final String tag)
     {
         boolean isContained = true;
         int index = this.getMapCanisterIndex(tag);
@@ -155,7 +155,7 @@ public class MapShelfer
         
     }
     
-    public MapCanister get(String searchKeyword)
+    public MapCanister get(final String searchKeyword)
     {
         MapCanister MapCanister = null;
         
@@ -168,7 +168,7 @@ public class MapShelfer
         return MapCanister;
     }
     
-    public Object search(String searchKeyword)
+    public Object search(final String searchKeyword)
     {
         Object searchResult = new Object();
         
@@ -201,7 +201,7 @@ public class MapShelfer
         
     }
     
-    private int getMapCanisterIndex(String searchTag)
+    private int getMapCanisterIndex(final String searchTag)
     {
         int mapCanisterIndex = -1;
         int start, end, midPt;

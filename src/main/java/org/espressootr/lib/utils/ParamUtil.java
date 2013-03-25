@@ -5,7 +5,7 @@ public class ParamUtil
 
   
 
-    public static boolean isValidParams(String... parameters)
+    public static boolean isValidParams(final String... parameters)
     {
 	boolean isValid = true;
 	for (String param : parameters)
@@ -20,7 +20,7 @@ public class ParamUtil
 	return isValid;
     }
     
-    private static boolean isNull(String param)
+    private static boolean isNull(final String param)
     {
 	if(param==null)
 	    return true; 
@@ -28,7 +28,7 @@ public class ParamUtil
 	    return false; 
     }
     
-    private static boolean isZeroLength(String param)
+    private static boolean isZeroLength(final String param)
     {
 	if(param.length() == InitUtil.ZERO)
 	    return true; 
@@ -38,7 +38,7 @@ public class ParamUtil
     
     
     
-    private static boolean isWhiteSpace(String param)
+    private static boolean isWhiteSpace(final String param)
     {
 	if(param.length() == 1 && param.equals(" "))
 	    return true; 

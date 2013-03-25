@@ -49,7 +49,7 @@ public class DistributedSaver
     }
     
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    public void save(List<String> willSaveList)
+    public void save(final List<String> willSaveList)
     {
         ExecutorService concurrentService = Executors.newFixedThreadPool(this.distCount);
         

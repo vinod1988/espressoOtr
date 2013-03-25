@@ -10,7 +10,7 @@ public class ListDistributor
 {
     
     @SuppressWarnings({ "rawtypes", "unchecked" })
-    public static HashMap<Integer, List> distributeListToSubList(int subListCount, List targetList)
+    public static HashMap<Integer, List> distributeListToSubList(final int subListCount, final List targetList)
     {
         HashMap<Integer, List> distributedList = new HashMap<Integer, List>();
         int targetListCount = targetList.size();
@@ -47,7 +47,7 @@ public class ListDistributor
     }
     
     @SuppressWarnings({ "rawtypes", "unchecked" })
-    public static HashMap<Integer, List> distributeListToSameCapacity(int capacityCount, List targetList)
+    public static HashMap<Integer, List> distributeListToSameCapacity(final int capacityCount, final List targetList)
     {
         HashMap<Integer, List> distributedList = new HashMap<Integer, List>();
         

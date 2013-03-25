@@ -24,7 +24,7 @@ public class ListCanister
         searcher = new ExtendedInclusiveBiSearch(); 
     }
      
-    public ListCanister(String tag, String bean)
+    public ListCanister(final String tag, final String bean)
     {
         if(searcher == null)
             searcher = new ExtendedInclusiveBiSearch(); 
@@ -34,7 +34,7 @@ public class ListCanister
         this.beans.add(bean);
     }
     
-    public ListCanister(String tag, List<String> beans)
+    public ListCanister(final String tag, final List<String> beans)
     {
         if(searcher == null)
             searcher = new ExtendedInclusiveBiSearch();
@@ -43,7 +43,7 @@ public class ListCanister
         this.beans = new ArrayList<String>(beans);
     }
     
-    public ListCanister(String tag, List<String> beans, boolean isSorted)
+    public ListCanister(final String tag, final List<String> beans, final boolean isSorted)
     {
         if(searcher == null)
             searcher = new ExtendedInclusiveBiSearch();
@@ -73,7 +73,7 @@ public class ListCanister
         return searcher;
     }
     
-    public void setSearcher(BeanSearch searcher)
+    public void setSearcher(final BeanSearch searcher)
     {
         this.searcher = searcher;
     }
@@ -93,13 +93,13 @@ public class ListCanister
     }
     
     
-    void add(String element)
+    void add(final String element)
     {
         this.beans.add(element);
         QuickSort.sort(this.beans);
     }
     
-    List<String> search(String searchBean)
+    List<String> search(final String searchBean)
     {
         List<String> searchElement = new ArrayList<String>();
         List<Integer> indexList = searcher.search(this.beans, searchBean);

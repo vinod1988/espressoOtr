@@ -5,7 +5,7 @@ public class StringAppender
     
     static StringBuilder appender = new StringBuilder();
     
-    public static String mergeToStr(String... targets)
+    public static String mergeToStr(final String... targets)
     {
         clear();
         
@@ -17,7 +17,7 @@ public class StringAppender
         return toStr();
     }
     
-    public static void append(String... targets)
+    public static void append(final String... targets)
     {
         for (String target : targets)
         {
